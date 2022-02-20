@@ -22,6 +22,8 @@ import workoutComplete1 from '../../../audio/workout-complete1.mp3'
 const WorkoutUI = ({
     workoutList,
     addLevelState,
+
+    volumeState,
 }) => {
 
     ////////////////////////////////////////
@@ -151,42 +153,81 @@ const WorkoutUI = ({
 
     //When Level State is changed:
     useEffect(() => {
-        if (playState) {
-            playExerciseStart()
-        } else {
-            playExercisePause()
+
+        //Check if muted
+        if (volumeState) {
+            if (playState) {
+                playExerciseStart()
+            } else {
+                playExercisePause()
+            }
         }
     }, [workoutLevelState])
 
     //When exercise is ending
     useEffect(() => {
-        if(timeCurrent === 3) {
-            playExerciseEnd()
+
+        //Check if muted
+        if (volumeState) {
+            if(timeCurrent === 3) {
+                playExerciseEnd()
+            }
         }
     }, [timeCurrent])
 
+
     //When play/pause state changes
     useEffect(() => {
-        if (playState) {
-            playExerciseStart()
-        } else {
-            playExercisePause()
+        
+        //Check if muted
+        if (volumeState) {
+            if (playState) {
+                playExerciseStart()
+            } else {
+                playExercisePause()
+            }   
         }
     }, [playState])
 
+
+    //Half Way exercise
+    useEffect(() => {
+
+        //Check if muted
+
+        if (volumeState) {
+            if(timeCurrent === Math.round(workoutList[workoutLevelState].time / 2)) {
+                playExerciseHalf()
+            }
+        }
+    }, [timeCurrent])
 
     /////////////////////End of Sound Effect Triggers//////////////////////////
 
 
     ///////////Misc///////////
+
+    //Finish Workout sound effect and progression
     function handleFinishWorkout() {
-        playWorkoutComplete1()
+        //If muted
+        if (volumeState) {
+            playWorkoutComplete1()
+        }
         addLevelState()
     }
 
+    //Calculations for ProgressBar width
+    const [progressBarWidth, setProgressBarWidth] = useState(0)
+    
+    useEffect(() => {
+        setProgressBarWidth((((workoutList[workoutLevelState].time - timeCurrent) / workoutList[workoutLevelState].time) * 100))
+    }, [timeCurrent])
+
   return (
     <>
-        <ProgressBar/>
+        <ProgressBar
+            progressBarWidth={progressBarWidth}
+        />
         <StyledWorkoutUI>
             
             <div className="exerciseHeader">

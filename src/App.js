@@ -616,6 +616,8 @@ function App() {
 
       workoutList={workoutList}
       workoutShuffler={workoutShuffler}
+
+      volumeState={volumeState}
       />} />
       </Routes>
     </Router>

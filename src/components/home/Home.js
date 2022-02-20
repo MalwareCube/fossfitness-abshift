@@ -20,6 +20,8 @@ const Home = ({
 
   workoutList,
   workoutShuffler,
+
+  volumeState,
  }) => {
 
   return (
@@ -88,6 +90,8 @@ return (
               <WorkoutUI
               workoutList={workoutList}
               addLevelState={addLevelState}
+
+              volumeState={volumeState}
               />
             )
           }
