@@ -13,6 +13,9 @@ import Header from './components/global/Header/Header'
 //Routes
 import Home from './components/home/Home';
 
+//React Helmet
+import { Helmet } from 'react-helmet'
+
 
 
 function App() {
@@ -595,6 +598,55 @@ function App() {
 
   return (
     <>
+    <Helmet>
+      <meta charSet="utf-8" />
+      <title>AbShift - Workout Generator</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+      {/*Favicon Links*/}
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+      <link rel="manifest" href="/site.webmanifest" />
+      <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#089daf" />
+      <meta name="msapplication-TileColor" content="#9ed6c4" />
+      <meta name="theme-color" content="#9ed6c4" />
+
+      {/*Content Meta Tags*/}
+      <meta name="keywords" content="ab workout, 6 pack, 6 pack abs, six pack, abs, how to get abs, abdominal, abdominals, abdominal muscles, workout, guided workout, quick abs, ab timer, workout timer, obliques" />
+      <meta name="description" content="AbShift is an effective follow along abdominal workout randomizer. Each workout provides total coverage of the abdominal muscles by targeting bottom-up, mid-range, top-down, and rotational movements." />
+      <meta name="subject" content="Simple, effective, and scientifically generated abdominal muscle workouts" />
+      <meta name="copyright"content="FossFitness - Built by odacavo" />
+      <meta name="language" content="en" />
+      <meta name="url" content="https://abshift.com" />
+      <meta name="identifier-URL" content="https://abshift.com" />
+
+      {/*Open Graph*/}
+      <meta property="og:title" content="AbShift - Workout Generator" />
+      <meta property="og:site_name" content="AbShift - Workout Generator" />
+      <meta property="og:url" content="https://abshift.com" />
+      <meta property="og:description" content="AbShift is an effective follow along abdominal workout randomizer. Each workout provides total coverage of the abdominal muscles by targeting bottom-up, mid-range, top-down, and rotational movements."/>
+      <meta property="og:type" content="fitness.course" />
+
+      {/*Misc SEO*/}
+      <meta itemprop="name" content="AbShift - Workout Generator"/>
+      <meta itemprop="description" content="AbShift is an effective follow along abdominal workout randomizer. Each workout provides total coverage of the abdominal muscles by targeting bottom-up, mid-range, top-down, and rotational movements."/>
+     
+      <meta name="twitter:card" content="summary"/>
+      <meta name="twitter:title" content="AbShift - Workout Generator"/>
+      <meta name="twitter:description" content="AbShift is an effective follow along abdominal workout randomizer. Each workout provides total coverage of the abdominal muscles by targeting bottom-up, mid-range, top-down, and rotational movements."/>
+      <meta name="twitter:site" content="odacavo"/>
+      <meta name="twitter:creator" content="odacavo"/>
+
+      <meta name="og:title" content="AbShift - Workout Generator"/>
+      <meta name="og:description" content="AbShift is an effective follow along abdominal workout randomizer. Each workout provides total coverage of the abdominal muscles by targeting bottom-up, mid-range, top-down, and rotational movements."/>
+      <meta name="og:url" content="https://abshift.com"/>
+      <meta name="og:site_name" content="AbShift - Workout Generator"/>
+      <meta name="og:locale" content="en_US"/>
+      <meta name="og:type" content="website"/>
+
+    </Helmet>
+
     <Router>
       <GlobalStyles />
       <Header

@@ -1,8 +1,5 @@
 import React, {useEffect} from 'react';
 
-//Styled Components
-//import { StyledProgressBar } from './ProgressBar.styled';
-
 const ProgressBar = ({
   progressBarWidth,
 }) => {
@@ -21,7 +18,7 @@ const ProgressBar = ({
     backgroundSize: '100vw',
     WebkitBoxShadow: '0px 3px 11px 1px rgba(0,0,0,0.40)', 
     boxShadow: '0px 3px 11px 1px rgba(0,0,0,0.40)',
-    transition: 'all 1s linear',
+    transition: 'width 1s linear'
   }
 
   return (
