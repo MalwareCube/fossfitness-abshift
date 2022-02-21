@@ -20,6 +20,8 @@ const WorkoutUI = ({
     addLevelState,
 
     volumeState,
+    stop,
+    play,
 }) => {
 
     ////////////////////////////////////////
@@ -142,16 +144,6 @@ const WorkoutUI = ({
 
     /////////////////////Sound Effect Triggers//////////////////////////
 
-    const [play, {stop}] = useSound(audioSprite, {
-        sprite: {
-            exerciseStart: [0, 3000],
-            exercisePause: [11999, 2000],
-            exerciseEnd: [4000, 4000],
-            exerciseHalf: [16000, 1000],
-            exerciseComplete: [20000, 22000],
-        },
-    })
-
     //When Level State is changed - listen for workoutLevelState change
     useEffect(() => {
         //Check if muted
@@ -172,9 +164,9 @@ const WorkoutUI = ({
     useEffect(() => {
         //Check if muted
         if (volumeState) {
-            if(timeCurrent === 3) {
+            if(timeCurrent === 3 || timeCurrent === 2 || timeCurrent === 1) {
                 stop()
-                play({id: 'exerciseEnd'})
+                play({id: 'exerciseCount'})
             }
         }
     }, [timeCurrent])

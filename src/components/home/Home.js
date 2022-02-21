@@ -22,6 +22,8 @@ const Home = ({
   workoutShuffler,
 
   volumeState,
+  stop,
+  play,
  }) => {
 
 
@@ -32,6 +34,7 @@ const Home = ({
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [levelState])
+
 
   return (
     <>
@@ -67,6 +70,10 @@ return (
             workoutShuffler={workoutShuffler}
 
             addLevelState={addLevelState}
+
+            volumeState={volumeState}
+            stop={stop}
+            play={play}
             />
           )
         }
@@ -100,7 +107,10 @@ return (
               workoutList={workoutList}
               levelState={levelState}
               addLevelState={addLevelState}
+              
               volumeState={volumeState}
+              stop={stop}
+              play={play}
               />
             )
           }

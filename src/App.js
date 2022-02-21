@@ -16,13 +16,15 @@ import Home from './components/home/Home';
 //React Helmet
 import { Helmet } from 'react-helmet'
 
+//Sound Effects
+import useSound from 'use-sound'
+import audioSprite from './audio/audiosprite.mp3'
 
 
 function App() {
-  
+
+
   /////////Global State/////////
-
-
   //App Level/Stage State - dictates what screen/component is shown
   const [levelState, setLevelState] = useState(0)
 
@@ -589,8 +591,44 @@ function App() {
 
 
 
+  /////////////////////Sound Effect Triggers//////////////////////////
+  const [play, {stop}] = useSound(audioSprite, {
+    sprite: {
+        exerciseStart: [0, 3000],
+        exercisePause: [11999, 2000],
+        exerciseEnd: [4000, 4000],
+        exerciseHalf: [16000, 2000],
+        exerciseComplete: [20000, 22000],
+        exerciseCount: [4000, 1000],
+        tap: [19000, 500],
+    },
+})
 
+  //When App State is changed - listen for levelState change
+  useEffect(() => {
+    //Check if muted
+    if (volumeState) {
+        if (levelState === 2) {
+            stop()
+            play({id: 'exerciseStart'})
+        } else if (levelState === 3) {
+          stop()
+          play({id: 'exerciseComplete'})
+        } else {
+          stop()
+          play({id: 'tap'})
+        }
+      }
+  }, [levelState])
 
+  //When workout is shuffled - listen for workoutList change (will also play sound on difficulty change, because it calls setWorkoutList)
+  useEffect(() => {
+    //Check if muted
+    if (volumeState) {
+          stop()
+          play({id: 'tap'})
+      }
+  }, [workoutList])
 
 
 
@@ -668,6 +706,8 @@ function App() {
       workoutShuffler={workoutShuffler}
 
       volumeState={volumeState}
+      stop={stop}
+      play={play}
       />} />
       </Routes>
     </Router>
