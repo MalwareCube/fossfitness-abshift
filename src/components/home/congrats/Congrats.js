@@ -35,7 +35,7 @@ let shareText = "Share"
 
 //Share Button Functionality
 function shareClipboard() {
-    navigator.clipboard.writeText('I just completed a 6 minute follow-along AbShift workout! Try one yourself on www.abshift.com 💪')
+    navigator.clipboard.writeText('I just completed a follow along AbShift workout! Try one yourself on www.abshift.com 💪')
     document.querySelector("#shareButton").innerHTML="Copied!"
 }
 

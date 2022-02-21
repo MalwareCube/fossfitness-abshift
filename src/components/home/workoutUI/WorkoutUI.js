@@ -12,15 +12,11 @@ import ProgressBar from './progressBar/ProgressBar'
 import WorkoutTimerFooter from './workoutTimerFooter/WorkoutTimerFooter'
 
 //Sound Effects
-import exerciseStart from '../../../audio/exercise-start.mp3'
-import exerciseHalf from '../../../audio/exercise-half.mp3'
-import exerciseEnd from '../../../audio/exercise-end.mp3'
-import exercisePause from '../../../audio/exercise-pause.mp3'
-
-import workoutComplete1 from '../../../audio/workout-complete1.mp3'
+import audioSprite from '../../../audio/audiosprite.mp3'
 
 const WorkoutUI = ({
     workoutList,
+    levelState,
     addLevelState,
 
     volumeState,
@@ -60,6 +56,7 @@ const WorkoutUI = ({
         setPlayState(prevPlayState => !prevPlayState)
       }
 
+    
 
     /////////////////////Timer States//////////////////////////
     
@@ -144,77 +141,89 @@ const WorkoutUI = ({
 
 
     /////////////////////Sound Effect Triggers//////////////////////////
-    const [playExerciseStart] = useSound(exerciseStart)
-    const [playExerciseHalf] = useSound(exerciseHalf)
-    const [playExerciseEnd, { stop }] = useSound(exerciseEnd)
-    const [playExercisePause] = useSound(exercisePause)
 
-    const [playWorkoutComplete1] = useSound(workoutComplete1)
+    const [play, {stop}] = useSound(audioSprite, {
+        sprite: {
+            exerciseStart: [0, 3000],
+            exercisePause: [11999, 2000],
+            exerciseEnd: [4000, 4000],
+            exerciseHalf: [16000, 1000],
+            exerciseComplete: [20000, 22000],
+        },
+    })
 
-    //When Level State is changed:
+    //When Level State is changed - listen for workoutLevelState change
     useEffect(() => {
-
         //Check if muted
         if (volumeState) {
             if (playState) {
-                playExerciseStart()
+                stop()
+                play({id: 'exerciseStart'})
+                
             } else {
-                playExercisePause()
+                stop()
+                play({id: 'exercisePause'})
             }
         }
     }, [workoutLevelState])
 
-    //When exercise is ending
-    useEffect(() => {
 
+    //When exercise is ending - listen for each tick
+    useEffect(() => {
         //Check if muted
         if (volumeState) {
             if(timeCurrent === 3) {
-                playExerciseEnd()
+                stop()
+                play({id: 'exerciseEnd'})
             }
         }
     }, [timeCurrent])
 
 
-    //When play/pause state changes
+    //When play/pause state changes - listen for playState change
     useEffect(() => {
         
         //Check if muted
         if (volumeState) {
             if (playState) {
-                playExerciseStart()
+                stop()
+                play({id: 'exerciseStart'})
             } else {
-                playExercisePause()
+                stop()
+                play({id: 'exercisePause'})
             }   
         }
     }, [playState])
 
 
-    //Half Way exercise
+    //When an exercise is half way done - listen for each tick
     useEffect(() => {
-
         //Check if muted
 
         if (volumeState) {
             if(timeCurrent === Math.round(workoutList[workoutLevelState].time / 2)) {
-                playExerciseHalf()
+                stop()
+                play({id: 'exerciseHalf'})
             }
         }
     }, [timeCurrent])
+
+    
+    //When muted, stop all sounds immediately - listen for volumeState
+    useEffect(() => {
+        stop()
+    }, [volumeState])
+
+    //When component is loaded, make sure start sound plays - listen for workoutLevelState
+
+
+
+
 
     /////////////////////End of Sound Effect Triggers//////////////////////////
 
 
     ///////////Misc///////////
-
-    //Finish Workout sound effect and progression
-    function handleFinishWorkout() {
-        //If muted
-        if (volumeState) {
-            playWorkoutComplete1()
-        }
-        addLevelState()
-    }
 
     //Calculations for ProgressBar width
     const [progressBarWidth, setProgressBarWidth] = useState(0)
@@ -309,7 +318,7 @@ const WorkoutUI = ({
                 {/*Conditional Rendering - if it's the last exercise, display the "End Workout" version of the button*/} 
                 {(() => {
                     if (workoutLevelState >= (workoutList.length - 1)){
-                    return (<button onClick={handleFinishWorkout}>Finish</button>)
+                    return (<button onClick={addLevelState}>Finish</button>)
                     } else {
                         return (<button onClick={addWorkoutLevelState}>Next</button>)
                     }

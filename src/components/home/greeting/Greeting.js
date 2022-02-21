@@ -12,29 +12,29 @@ const Greeting = ({
 
   //Setting welcome greeting variable based on current hour
   let welcomeGreetingMessage = "Hey There 👋"
-  let welcomeGreetingSub = "Perfect time for a workout"
+  let welcomeGreetingSub = "Perfect time for a workout."
   
   if (localTimeState >= 0 && localTimeState < 4) {
     welcomeGreetingMessage = "Bonne Nuit 🌃"
-    welcomeGreetingSub = "Never too late for a workout"
+    welcomeGreetingSub = "Never too late for a workout."
   } else if (localTimeState >= 4 && localTimeState < 8) {
     welcomeGreetingMessage = "Early Riser 🐦"
-    welcomeGreetingSub = "Perfect time for a workout"
+    welcomeGreetingSub = "Perfect time for a workout."
   } else if (localTimeState >= 8 && localTimeState < 12) {
     welcomeGreetingMessage = "Good Morning 🌅"
-    welcomeGreetingSub = "Perfect time for a workout"
+    welcomeGreetingSub = "Perfect time for a workout."
   } else if (localTimeState >= 12 && localTimeState < 17) {
     welcomeGreetingMessage = "Good Afternoon ⛅"
-    welcomeGreetingSub = "Perfect time for a workout"
+    welcomeGreetingSub = "Perfect time for a workout."
   } else if (localTimeState >= 17 && localTimeState < 21) {
     welcomeGreetingMessage = "Good Evening 🌇"
-    welcomeGreetingSub = "Perfect time for a workout"
+    welcomeGreetingSub = "Perfect time for a workout."
   } else if (localTimeState >= 21 && localTimeState <= 24) {
     welcomeGreetingMessage = "Good Night 🌃"
-    welcomeGreetingSub = "Still time to get that workout in"
+    welcomeGreetingSub = "Still time to get that workout in."
   } else {
     welcomeGreetingMessage = "Hey There 👋"
-    welcomeGreetingSub = "Perfect time for a workout"
+    welcomeGreetingSub = "Perfect time for a workout."
   }
 
   function greetingClick() {

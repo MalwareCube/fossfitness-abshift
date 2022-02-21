@@ -84,7 +84,6 @@ html {
     #2b88be,
     #2b59be,
     #5e2bbe,
-    #a52bbe,
     #be2b8d,
     #be2b2b
   );
@@ -149,6 +148,10 @@ body {
   animation: bg-animation 420s infinite alternate;
 
   overflow-x: hidden;
+}
+
+.test {
+  background-image: none;
 }
 
 ::selection {

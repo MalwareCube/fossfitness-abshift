@@ -4,10 +4,6 @@ const ProgressBar = ({
   progressBarWidth,
 }) => {
 
-  //Everytime set remaining time gets updated (ticks), calculate percentage needed for progressbar width
-
-  
-
   const styledProgressBar = {
     height: '10px',
     width: `${progressBarWidth}%`,

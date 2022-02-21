@@ -98,8 +98,8 @@ return (
             return (
               <WorkoutUI
               workoutList={workoutList}
+              levelState={levelState}
               addLevelState={addLevelState}
-
               volumeState={volumeState}
               />
             )
