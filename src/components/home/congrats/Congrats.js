@@ -6,7 +6,8 @@ import { StyledCongrats } from './Congrats.styled'
 //Icons
 import { BsShare } from 'react-icons/bs';
 
-
+//React Helmet
+import { Helmet } from 'react-helmet'
 
 //homeButton - onClick, set level state back to 0, which will re-render the Welcome component / reset the app
 //There will be a setLevelState function or whatever to control the entire app. Timers will trigger it to progress. Hitting "previous exercise" etc. will subtract one level state, progress one, etc.
@@ -63,6 +64,10 @@ const quotesArray = [
 ]
 
   return (
+      <>
+        <Helmet>
+            <title>AbShift - Workout Complete! 🎉</title>
+        </Helmet>
       <StyledCongrats>
           <h2>Congratulations! 🎉</h2>
           <h3>You killed that workout!</h3>
@@ -76,6 +81,7 @@ const quotesArray = [
 
           <small>AbShift was created with 💪 by <a href="https://twitter.com/odacavo">odacavo</a></small>
       </StyledCongrats>
+      </>
   )
 };
 

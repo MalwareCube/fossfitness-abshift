@@ -1,9 +1,47 @@
 import { createGlobalStyle } from "styled-components";
 
+//Body Gradient Randomizer
+
+const gradSwatches = ['#27a2e9, #3936d4, #c41ac4, #7127e9', '#6141d3, #00B4DB, #0083B0, #27a2e9', '#a12fff, #2484dd', '#23cc99, #0083B0']
+
+//Randomize order
+for (let i = gradSwatches.length - 1; i > 0; i--) {
+  const j = Math.floor(Math.random() * (i + 1));
+  [gradSwatches[i], gradSwatches[j]] = [gradSwatches[j], gradSwatches[i]];
+}
+
+//Add commas except for last
+for (let i = 0; i < (gradSwatches.length -1); i++) {
+  gradSwatches[i] = gradSwatches[i] + ","
+} 
+
+const gradSwatchesSize = (200 * gradSwatches.length) * 3
+const gradSwatchesTime = (gradSwatches.length * 30) * 3
+
 const GlobalStyles = createGlobalStyle`
 
 //Google Fonts
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+/* open-sans-regular - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+       url('../fonts/open-sans-v27-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/open-sans-v27-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* open-sans-600 - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local(''),
+       url('../fonts/open-sans-v27-latin-600.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/open-sans-v27-latin-600.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
 
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~CSS Reset/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -73,20 +111,7 @@ html {
 :root {
   
   //Gradients
-  --gradient: linear-gradient(
-    45deg,
-    #be2b2b,
-    #be6d2b,
-    #be8f2b,
-    #59be2b,
-    #2bbe68,
-    #2bbeaa,
-    #2b88be,
-    #2b59be,
-    #5e2bbe,
-    #be2b8d,
-    #be2b2b
-  );
+  --gradient: linear-gradient(45deg,${gradSwatches});
 
   //Swatches
   --P1: #91f0d0;
@@ -144,9 +169,8 @@ body {
   
   min-height: 100vh;
   background-image: var(--gradient);
-  background-size: 2000%;
-  animation: bg-animation 420s infinite alternate;
-
+  background-size: ${gradSwatchesSize}%;
+  animation: bg-animation ${gradSwatchesTime}s infinite alternate;
   overflow-x: hidden;
 }
 

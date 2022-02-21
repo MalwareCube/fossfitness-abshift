@@ -11,6 +11,9 @@ import WorkoutSettings from './workoutSettings/WorkoutSettings'
 import { TiArrowShuffle } from 'react-icons/ti';
 import { IoSettingsSharp } from 'react-icons/io5';
 
+//React Helmet
+import { Helmet } from 'react-helmet'
+
 const WorkoutOverview = ({
 difficulty,
 onSetDifficulty,
@@ -35,6 +38,14 @@ const [showSettings, setSettings] = useState(false)
 function toggleSettings() {
     const prevState = showSettings
     setSettings(!prevState)
+
+    //Scroll bottom
+    if(!showSettings) {
+    setTimeout(function () {
+        window.scrollTo(0, document.body.scrollHeight);
+        clearTimeout()
+    }, 1);
+    }
 
     //Check if muted and play tap sound
     if (volumeState) {
@@ -93,6 +104,10 @@ var totalWorkoutTime = new Date(totalWorkoutSeconds * 1000).toISOString().substr
 
 
 return (
+    <>
+    <Helmet>
+      <title>AbShift - {difficultyString} Workout</title>
+    </Helmet>
     <StyledWorkoutOverview>
         <div className="workoutOverviewTitle">
             <h2>{difficultyString} Workout</h2>
@@ -144,6 +159,7 @@ return (
         /> : null}
         
     </StyledWorkoutOverview>
+    </>
   )
 };
 

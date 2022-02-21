@@ -58,6 +58,12 @@ function App() {
   function onSetDifficulty(level) {
     setDifficulty(level)
     localStorage.setItem("difficulty", level)
+
+    //Scroll bottom
+    setTimeout(function () {
+      window.scrollTo(0, document.body.scrollHeight);
+      clearTimeout()
+  }, 1);
   }
 
   //useEffect - listens for the change in the 'difficulty' state. When it notices it, it calls the shuffle function again
@@ -629,7 +635,6 @@ function App() {
           play({id: 'tap'})
       }
   }, [workoutList])
-
 
 
   return (

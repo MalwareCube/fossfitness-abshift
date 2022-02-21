@@ -14,6 +14,9 @@ import WorkoutTimerFooter from './workoutTimerFooter/WorkoutTimerFooter'
 //Sound Effects
 import audioSprite from '../../../audio/audiosprite.mp3'
 
+//React Helmet
+import { Helmet } from 'react-helmet'
+
 const WorkoutUI = ({
     workoutList,
     levelState,
@@ -224,8 +227,17 @@ const WorkoutUI = ({
         setProgressBarWidth((((workoutList[workoutLevelState].time - timeCurrent) / workoutList[workoutLevelState].time) * 100))
     }, [timeCurrent])
 
+
+    //Title Conditional Variables
+    const playTitle = <title>{`(${("0" + Math.floor((timeCurrent / 60) % 60)).slice(-2)}:${("0" + Math.floor((timeCurrent / 1) % 60)).slice(-2)}) AbShift - Set ${workoutLevelState + 1} of ${workoutList.length}`}</title>
+    const pauseTitle = <title>{`(${("0" + Math.floor((timeCurrent / 60) % 60)).slice(-2)}:${("0" + Math.floor((timeCurrent / 1) % 60)).slice(-2)})`} Workout Paused</title>
+
   return (
     <>
+    <Helmet>
+      {playState ? playTitle : pauseTitle}
+    </Helmet>
+
         <ProgressBar
             progressBarWidth={progressBarWidth}
         />
