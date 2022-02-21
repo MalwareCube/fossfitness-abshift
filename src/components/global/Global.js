@@ -77,7 +77,7 @@ html {
     45deg,
     #be2b2b,
     #be6d2b,
-    #beaf2b,
+    #be8f2b,
     #59be2b,
     #2bbe68,
     #2bbeaa,

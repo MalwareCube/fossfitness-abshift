@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 
 //Components
 import ContentBlock from './contentBlock/ContentBlock'
@@ -23,6 +23,15 @@ const Home = ({
 
   volumeState,
  }) => {
+
+
+
+  //Misc Functions
+
+  //When levelState changes (when new UI component renders), scroll the page to the top
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [levelState])
 
   return (
     <>
