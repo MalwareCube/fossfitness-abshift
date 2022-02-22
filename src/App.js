@@ -14,7 +14,7 @@ import Header from './components/global/Header/Header'
 import Home from './components/home/Home';
 
 //React Helmet
-import { Helmet } from 'react-helmet'
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 //Sound Effects
 import useSound from 'use-sound'
@@ -465,9 +465,53 @@ function App() {
         time: 30
       },
     ]
- 
   }
 
+
+  ///////////////////Master Exercise List Exact Copy (without any exercises that are CC (double/alternating))
+  const masterExerciseListFalseCC = Object.assign({}, masterExerciseList)
+
+    //Filter CC out of bottom-up
+    let bottomUpFalseCC = masterExerciseListFalseCC['bottom-up']
+    bottomUpFalseCC = bottomUpFalseCC.filter(function( obj ) { return obj.cc !== true })
+
+    //Filter CC out of bottom-up-rotation
+    let bottomUpRotationFalseCC = masterExerciseListFalseCC['bottom-up-rotation']
+    bottomUpRotationFalseCC = bottomUpRotationFalseCC.filter(function( obj ) { return obj.cc !== true })
+
+    //Filter CC out of obliques
+    let obliquesFalseCC = masterExerciseListFalseCC['obliques']
+    obliquesFalseCC = obliquesFalseCC.filter(function( obj ) { return obj.cc !== true })
+
+    //Filter CC out of mid-range
+    let midRangeFalseCC = masterExerciseListFalseCC['mid-range']
+    midRangeFalseCC = midRangeFalseCC.filter(function( obj ) { return obj.cc !== true })
+
+    //Filter CC out of top-down-rotation
+    let topDownRotationFalseCC = masterExerciseListFalseCC['top-down-rotation']
+    topDownRotationFalseCC = topDownRotationFalseCC.filter(function( obj ) { return obj.cc !== true })
+
+    //Filter CC out of top-down
+    let topDownFalseCC = masterExerciseListFalseCC['top-down']
+    topDownFalseCC = topDownFalseCC.filter(function( obj ) { return obj.cc !== true })
+
+    //Get rest
+    let restFalseCC = masterExerciseListFalseCC['rest']
+  
+  //Put these arrays back into a new object
+  const masterExerciseListFalseCCObj = {
+    "bottom-up": bottomUpFalseCC,
+    "bottom-up-rotation": bottomUpRotationFalseCC,
+    "obliques": obliquesFalseCC,
+    "mid-range": midRangeFalseCC,
+    "top-down-rotation": topDownRotationFalseCC,
+    "top-down": topDownFalseCC,
+    "rest": restFalseCC,
+  }
+  ///////////////////End of Master Exercise List Exact Copy (without any exercises that are CC (double/alternating))
+
+
+  
 
   ///////////////Global Workout Exercise State (The current state for this iteration. Will pull pseudo-randoms from masterExerciseList)
   const [workoutList, setWorkoutList] = useState([])
@@ -499,7 +543,29 @@ function App() {
 
     //If any random variable has a cc=true value, pick one of these preset cc workouts
     //If any of the randomly selected workouts has a cc = true, you MUST select index 0, otherwise, random
-    const ccShuffledWorkout = []
+
+    //Set variables for CC: false Random Selections
+    const ccrandomBottomUp = masterExerciseListFalseCCObj['bottom-up'][Math.floor(Math.random()*masterExerciseListFalseCCObj['bottom-up'].length)]
+    const ccrandomBottomUpRotation = masterExerciseListFalseCCObj['bottom-up-rotation'][Math.floor(Math.random()*masterExerciseListFalseCCObj['bottom-up-rotation'].length)]
+    const ccrandomObliques = masterExerciseListFalseCCObj['obliques'][Math.floor(Math.random()*masterExerciseListFalseCCObj['obliques'].length)]
+    const ccrandomMidRange = masterExerciseListFalseCCObj['mid-range'][Math.floor(Math.random()*masterExerciseListFalseCCObj['mid-range'].length)]
+    const ccrandomTopDownRotation = masterExerciseListFalseCCObj['top-down-rotation'][Math.floor(Math.random()*masterExerciseListFalseCCObj['top-down-rotation'].length)]
+    const ccrandomTopDown = masterExerciseListFalseCCObj['top-down'][Math.floor(Math.random()*masterExerciseListFalseCCObj['top-down'].length)]
+    const ccrest = masterExerciseListFalseCCObj['rest'][0]
+
+    const ccworkoutVariations = [
+      // Seated Ab Circle - bottom-up
+      [{name: "Seated Ab Circles (Clockwise)",cc: true,img: "seated-ab-circles.gif",time: 60},{name: "Seated Ab Circles (Counter Clockwise)",cc: true,img: "seated-ab-circles-cc.gif",time: 60},ccrandomObliques,ccrest,ccrandomMidRange,ccrandomTopDownRotation,ccrest,ccrandomTopDown],
+      // Side Jack Knives - obliques
+      [ccrandomBottomUp,ccrandomBottomUpRotation,ccrest,{name: "Side Jack-Knives (Left Side)", cc: true, img: "side-jack-knives.gif", time: 60},{name: "Side Jack-Knives (Right Side)", cc: true, img: "side-jack-knives-cc.gif", time: 60},ccrandomMidRange,ccrest,ccrandomTopDown],
+      // Side Cycles - obliques
+      [ccrandomBottomUp,ccrandomBottomUpRotation,ccrest,{name: "Side Cycles (Left Side)",cc: true,img: "side-cycles.gif",time: 60},{name: "Side Cycles (Right Side)",cc: true,img: "side-cycles-cc.gif",time: 60},ccrest,ccrandomTopDownRotation,ccrandomTopDown],
+      // Side Scissor Crunches - top-down-rotation
+      [ccrandomBottomUp,ccrandomBottomUpRotation,ccrandomObliques,ccrest,ccrandomMidRange,ccrandomTopDown,ccrest,{name: "Side Scissor Crunches (Left Side)",cc: true,img: "side-scissor-crunches.gif",time: 60},{name: "Side Scissor Crunches (Right Side)",cc: true,img: "side-scissor-crunches-cc.gif",time: 60}],
+      //Upper-Circle Crunches - top-down
+      [ccrandomBottomUp,ccrandomBottomUpRotation,ccrandomObliques,ccrest,ccrandomMidRange,ccrandomTopDown,ccrest,{name: "Upper-Circle-Crunches (Clockwise)",cc: true,img: "upper-circle-crunches.gif",time: 60},{name: "Upper-Circle-Crunches (Counter Clockwise)",cc: true,img: "upper-circle-crunches-cc.gif",time: 60}],
+    ]
+
 
     const workoutVariations = [
       // 3r2r1
@@ -514,7 +580,20 @@ function App() {
       [randomBottomUp,randomBottomUpRotation,randomObliques,rest,randomMidRange,randomTopDownRotation,randomTopDown,masterExerciseList['mid-range'][Math.floor(Math.random()*masterExerciseList['mid-range'].length)]],
     ]
 
-    const shuffledWorkout = workoutVariations[Math.floor(Math.random()*workoutVariations.length)]
+    let shuffledWorkout = workoutVariations[Math.floor(Math.random()*workoutVariations.length)]
+
+    //For each array in the shuffledWorkout object, check to see if any of the key/values include cc: true
+    let containsCC = false
+    shuffledWorkout.forEach((exercise, index) => {
+      if(exercise.cc === true) {
+        containsCC = true
+      }
+    })
+
+    //If any were found to be true, then changed the shuffledWorkout object with a random variation of ccworkoutVariations
+    if(containsCC) {
+      shuffledWorkout = ccworkoutVariations[Math.floor(Math.random()*workoutVariations.length)]
+    }
     
     //Pass over to 2. Time Shuffler
     workoutShuffleTimer(shuffledWorkout)
@@ -638,7 +717,7 @@ function App() {
 
 
   return (
-    <>
+    <HelmetProvider>
     <Helmet>
       <meta charSet="utf-8" />
       <title>AbShift - Workout Generator</title>
@@ -666,7 +745,7 @@ function App() {
       <meta property="og:title" content="AbShift - Workout Generator" />
       <meta property="og:site_name" content="AbShift - Workout Generator" />
       <meta property="og:url" content="https://abshift.com" />
-      <meta property="og:description" content="AbShift is an effective follow along abdominal workout randomizer. Each workout provides total coverage of the abdominal muscles by targeting bottom-up, mid-range, top-down, and rotational movements."/>
+      <meta property="og:description" content="AbShift is an effective follow along abdominal workout randomizer. Each  workout provides total coverage of the abdominal muscles by targeting bottom-up, mid-range, top-down, and rotational movements."/>
       <meta property="og:type" content="fitness.course" />
 
       {/*Misc SEO*/}
@@ -716,7 +795,7 @@ function App() {
       />} />
       </Routes>
     </Router>
-    </>
+    </HelmetProvider>
   );
 }
 

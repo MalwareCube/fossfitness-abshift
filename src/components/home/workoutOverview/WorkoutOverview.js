@@ -12,7 +12,7 @@ import { TiArrowShuffle } from 'react-icons/ti';
 import { IoSettingsSharp } from 'react-icons/io5';
 
 //React Helmet
-import { Helmet } from 'react-helmet'
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 const WorkoutOverview = ({
 difficulty,

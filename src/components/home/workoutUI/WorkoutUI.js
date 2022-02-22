@@ -15,7 +15,7 @@ import WorkoutTimerFooter from './workoutTimerFooter/WorkoutTimerFooter'
 import audioSprite from '../../../audio/audiosprite.mp3'
 
 //React Helmet
-import { Helmet } from 'react-helmet'
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 const WorkoutUI = ({
     workoutList,
