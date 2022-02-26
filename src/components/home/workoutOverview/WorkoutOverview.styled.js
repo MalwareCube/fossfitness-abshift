@@ -46,7 +46,6 @@ export const StyledWorkoutOverview = styled.div`
 
     & .exerciseBlockImg img {
         width: 100%;
-        opacity: .4;
     }
 
     & .workoutOverviewButtons {
