@@ -19,7 +19,6 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 const WorkoutUI = ({
     workoutList,
-    levelState,
     addLevelState,
 
     volumeState,
@@ -270,9 +269,7 @@ const WorkoutUI = ({
 
 
                 <div className="exerciseImg">
-                    <img alt="Exercise Demonstration" src="https://i.imgur.com/PWPU7sR.png"/>
-                    {/*If state is paused, show this*/}
-                    {/* <div className="pausedIndicator">Workout Paused</div> */}
+                    <img alt="Exercise Demonstration" src={"images/exercises/" + workoutList[workoutLevelState].img}/>
                 </div>
 
 

@@ -41,11 +41,12 @@ export const StyledWorkoutOverview = styled.div`
     }
 
     & .exerciseBlockImg {
-        max-width: 80px;
+        max-width: 100px;
     }
 
     & .exerciseBlockImg img {
         width: 100%;
+        opacity: .4;
     }
 
     & .workoutOverviewButtons {

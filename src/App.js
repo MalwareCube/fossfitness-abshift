@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react'
 
 //React Router
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
 //Global Styles
 import GlobalStyles from './components/global/Global';
@@ -173,12 +173,6 @@ function App() {
       },
 
       {
-        name: "Scissors",
-        cc: false,
-        img: "scissors.gif"
-      },
-
-      {
         name: "Crunch Kicks",
         cc: false,
         img: "crunch-kicks.gif"
@@ -260,7 +254,7 @@ function App() {
       {
         name: "Marching Planks",
         cc: false,
-        img: "russian-twists.gif"
+        img: "marching-planks.gif"
       },
 
       {
@@ -341,6 +335,12 @@ function App() {
       },
 
       {
+        name: "Scissors",
+        cc: false,
+        img: "scissors.gif"
+      },
+
+      {
         name: "V-Ups",
         cc: false,
         img: "v-ups.gif"
@@ -350,12 +350,6 @@ function App() {
         name: "Alternating Elbow Knee Planks",
         cc: false,
         img: "alternating-elbow-knee-planks.gif"
-      },
-
-      {
-        name: "Twisting Pistons",
-        cc: false,
-        img: "twisting-pistons.gif"
       },
 
     ],
@@ -370,7 +364,7 @@ function App() {
       {
         name: "Alternating Elbow Knee Crunches",
         cc: false,
-        img: "alternating-elbow-to-knee-crunches.gif"
+        img: "alternating-elbow-knee-crunches.gif"
       },
 
       {
@@ -428,7 +422,7 @@ function App() {
       {
         name: "Butterfly Sit-Ups",
         cc: false,
-        img: "butterfly-situps.gif"
+        img: "butterfly-sit-ups.gif"
       },
 
       {
@@ -564,6 +558,21 @@ function App() {
       [ccrandomBottomUp,ccrandomBottomUpRotation,ccrandomObliques,ccrest,ccrandomMidRange,ccrandomTopDown,ccrest,{name: "Side Scissor Crunches (Left Side)",cc: true,img: "side-scissor-crunches.gif",time: 60},{name: "Side Scissor Crunches (Right Side)",cc: true,img: "side-scissor-crunches-cc.gif",time: 60}],
       //Upper-Circle Crunches - top-down
       [ccrandomBottomUp,ccrandomBottomUpRotation,ccrandomObliques,ccrest,ccrandomMidRange,ccrandomTopDown,ccrest,{name: "Upper-Circle-Crunches (Clockwise)",cc: true,img: "upper-circle-crunches.gif",time: 60},{name: "Upper-Circle-Crunches (Counter Clockwise)",cc: true,img: "upper-circle-crunches-cc.gif",time: 60}],
+      
+      //Normal Random 3r2r1 (Balance out the CCs)
+      [ccrandomBottomUp,ccrandomBottomUpRotation,ccrandomObliques,ccrest,ccrandomMidRange,ccrandomTopDownRotation,ccrest,ccrandomTopDown],
+      //Normal Random 2r3r1 - (Balance out the CCs)
+      [ccrandomBottomUp,ccrandomBottomUpRotation,ccrest,ccrandomObliques,ccrandomMidRange,ccrandomTopDownRotation,ccrest,ccrandomTopDown],
+      // Normal Random 2r3r1 (Balance out the CCs)
+      [ccrandomBottomUp,ccrandomBottomUpRotation,ccrest,ccrandomObliques,ccrandomMidRange,ccrandomTopDownRotation,ccrest,ccrandomTopDown],
+
+       // Normal Random 3r3r1
+       [ccrandomBottomUp,ccrandomBottomUpRotation,ccrandomObliques,ccrest,ccrandomMidRange,ccrandomTopDownRotation,ccrandomTopDown,ccrest,masterExerciseListFalseCCObj['mid-range'][Math.floor(Math.random()*masterExerciseList['mid-range'].length)]],
+       // Normal Random 3r4
+       [ccrandomBottomUp,ccrandomBottomUpRotation,ccrandomObliques,ccrest,ccrandomMidRange,ccrandomTopDownRotation,ccrandomTopDown,masterExerciseListFalseCCObj['mid-range'][Math.floor(Math.random()*masterExerciseList['mid-range'].length)]],
+     
+      
+      
     ]
 
 
@@ -592,7 +601,7 @@ function App() {
 
     //If any were found to be true, then changed the shuffledWorkout object with a random variation of ccworkoutVariations
     if(containsCC) {
-      shuffledWorkout = ccworkoutVariations[Math.floor(Math.random()*workoutVariations.length)]
+      shuffledWorkout = ccworkoutVariations[Math.floor(Math.random()*ccworkoutVariations.length)]
     }
     
     //Pass over to 2. Time Shuffler
@@ -716,6 +725,8 @@ function App() {
   }, [workoutList])
 
 
+  
+
   return (
     <HelmetProvider>
     <Helmet>
@@ -793,6 +804,9 @@ function App() {
       stop={stop}
       play={play}
       />} />
+
+      <Route path="*" element={<Navigate to ="/" />}/>
+
       </Routes>
     </Router>
     </HelmetProvider>

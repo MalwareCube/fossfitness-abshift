@@ -70,7 +70,7 @@ const quotesArray = [
         </Helmet>
       <StyledCongrats>
           <h2>Congratulations! 🎉</h2>
-          <h3>You killed that workout!</h3>
+          <h3>Workout Complete!</h3>
           <p>{quotesArray[Math.floor(Math.random() * quotesArray.length)]}</p>
           <p>Great job, and keep it up! Consistency is key.</p>
 
