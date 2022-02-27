@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 
+
 //Styled Components
 import { StyledWorkoutOverview } from './WorkoutOverview.styled'
 
@@ -127,8 +128,7 @@ return (
                 </div>
                 
                 <div className="exerciseBlockImg">
-                    <img alt={exercise.name} src={"images/exercise_thumbs/" + exercise.img}/>
-                    {/*src={exercise.img}*/}
+                    <img alt={exercise.name} src={"images/exercises/" + exercise.img}/>
                 </div>
             </li>
         ))}

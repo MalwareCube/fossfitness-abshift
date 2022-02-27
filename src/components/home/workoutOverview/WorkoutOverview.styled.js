@@ -1,5 +1,25 @@
 import styled from "styled-components";
 
+
+//Body Gradient Randomizer
+
+const gradSwatches = ['#27a2e9, #3936d4, #c41ac4, #7127e9', '#6141d3, #00B4DB, #0083B0, #27a2e9', '#a12fff, #2484dd', '#23cc99, #0083B0']
+
+//Randomize order
+for (let i = gradSwatches.length - 1; i > 0; i--) {
+  const j = Math.floor(Math.random() * (i + 1));
+  [gradSwatches[i], gradSwatches[j]] = [gradSwatches[j], gradSwatches[i]];
+}
+
+//Add commas except for last
+for (let i = 0; i < (gradSwatches.length -1); i++) {
+  gradSwatches[i] = gradSwatches[i] + ","
+} 
+
+const gradSwatchesSize = (200 * gradSwatches.length) * 3
+const gradSwatchesTime = (gradSwatches.length * 30) * 3
+
+
 export const StyledWorkoutOverview = styled.div`
 
     position: relative;
@@ -42,12 +62,14 @@ export const StyledWorkoutOverview = styled.div`
 
     & .exerciseBlockImg {
         max-width: 100px;
+        background-color: #ffffff;
+        border-radius: 3px;
     }
 
     & .exerciseBlockImg img {
         width: 100%;
-        opacity: .9;
-        filter: blur(.3px);
+        filter: blur(.5px) contrast(.8) invert(1);
+        transition: all .2s;
     }
 
     & .workoutOverviewButtons {
