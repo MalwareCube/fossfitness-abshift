@@ -62,14 +62,16 @@ export const StyledWorkoutOverview = styled.div`
 
     & .exerciseBlockImg {
         max-width: 100px;
-        background-color: #ffffff;
+        //background-color: #f1f1f1;
         border-radius: 3px;
     }
 
     & .exerciseBlockImg img {
         width: 100%;
-        filter: blur(.5px) contrast(.8) invert(1);
+        //filter: blur(.5px) contrast(.8) invert(1);
+        mix-blend-mode: multiply;
         transition: all .2s;
+        opacity: .9;
     }
 
     & .workoutOverviewButtons {
