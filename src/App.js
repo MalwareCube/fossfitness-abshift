@@ -728,11 +728,7 @@ function App() {
   
 
   return (
-
-    <Router>
-
-
-<HelmetProvider>
+    <HelmetProvider>
     <Helmet>
       <meta charSet="utf-8" />
       <title>AbShift - Workout Generator</title>
@@ -773,7 +769,6 @@ function App() {
       <meta name="twitter:description" content="AbShift is an effective follow along abdominal workout randomizer. Each workout provides total coverage of the abdominal muscles by targeting bottom-up, mid-range, top-down, and rotational movements."/>
       <meta name="twitter:image" content="https://www.abshift.com/mstile-310x310.png"/>
 
-
       <meta name="og:title" content="AbShift - Workout Generator"/>
       <meta name="og:description" content="AbShift is an effective follow along abdominal workout randomizer. Each workout provides total coverage of the abdominal muscles by targeting bottom-up, mid-range, top-down, and rotational movements."/>
       <meta name="og:url" content="https://abshift.com"/>
@@ -781,8 +776,8 @@ function App() {
       <meta name="og:locale" content="en_US"/>
       <meta name="og:type" content="website"/>
     </Helmet>
-</HelmetProvider>
 
+    <Router>
       <GlobalStyles />
       <Header
       volumeState={volumeState}
@@ -813,6 +808,7 @@ function App() {
 
       </Routes>
     </Router>
+    </HelmetProvider>
   );
 }
 
