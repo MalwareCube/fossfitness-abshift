@@ -128,7 +128,7 @@ return (
                 </div>
                 
                 <div className="exerciseBlockImg">
-                    <img alt={exercise.name} src={"images/exercise_thumbs/" + exercise.img}/>
+                    <img alt={exercise.name} src={"images/exercise_thumbs/" + exercise.img + ".jpg"}/>
                 </div>
             </li>
         ))}

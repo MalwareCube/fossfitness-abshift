@@ -133,61 +133,61 @@ function App() {
       {
         name: "One Down Two Ups",
         cc: false,
-        img: "one-down-two-ups.gif"
+        img: "one-down-two-ups"
       },
 
       {
         name: "Figure 8s",
         cc: false,
-        img: "figure-8s.gif"
+        img: "figure-8s"
       },
 
       {
         name: "Seated Knee Tucks",
         cc: false,
-        img: "seated-knee-tucks.gif"
+        img: "seated-knee-tucks"
       },
 
       {
         name: "Pulse-Ups",
         cc: false,
-        img: "pulse-ups.gif"
+        img: "pulse-ups"
       },
 
       {
         name: "21 Crunches",
         cc: false,
-        img: "21-crunches.gif"
+        img: "21-crunches"
       },
 
       {
         name: "Reverse Crunches",
         cc: false,
-        img: "reverse-crunches.gif"
+        img: "reverse-crunches"
       },
 
       {
         name: "Bicycle Crunches",
         cc: false,
-        img: "bicycle-crunches.gif"
+        img: "bicycle-crunches"
       },
 
       {
         name: "Crunch Kicks",
         cc: false,
-        img: "crunch-kicks.gif"
+        img: "crunch-kicks"
       },
 
       {
         name: "Leg Raises",
         cc: false,
-        img: "leg-raises.gif"
+        img: "leg-raises"
       },
 
       {
         name: "Seated Ab Circles",
         cc: true,
-        img: "seated-ab-circles.gif",
+        img: "seated-ab-circles",
         time: 60
       },
 
@@ -197,49 +197,49 @@ function App() {
       {
         name: "Black Widow Knee Slides",
         cc: false,
-        img: "black-widow-knee-slides.gif"
+        img: "black-widow-knee-slides"
       },
 
       {
         name: "Half Wipers",
         cc: false,
-        img: "half-wipers.gif"
+        img: "half-wipers"
       },
 
       {
         name: "Straight Leg Wipers",
         cc: false,
-        img: "straight-leg-wipers.gif"
+        img: "straight-leg-wipers"
       },
 
       {
         name: "Knee-In Twists",
         cc: false,
-        img: "knee-in-twists.gif"
+        img: "knee-in-twists"
       },
 
       {
         name: "Climber Taps",
         cc: false,
-        img: "climber-taps.gif"
+        img: "climber-taps"
       },
 
       {
         name: "Crossover Mountain Climbers",
         cc: false,
-        img: "crossover-mountain-climbers.gif"
+        img: "crossover-mountain-climbers"
       },
 
       {
         name: "Twisting Pistons",
         cc: false,
-        img: "twisting-pistons.gif"
+        img: "twisting-pistons"
       },
 
       {
         name: "Backwards 7s",
         cc: false,
-        img: "backwards-7s.gif"
+        img: "backwards-7s"
       },
 
     ],
@@ -248,62 +248,62 @@ function App() {
       {
         name: "Russian Twists",
         cc: false,
-        img: "russian-twists.gif"
+        img: "russian-twists"
       },
 
       {
         name: "Marching Planks",
         cc: false,
-        img: "marching-planks.gif"
+        img: "marching-planks"
       },
 
       {
         name: "Cross Crunches",
         cc: false,
-        img: "cross-crunches.gif"
+        img: "cross-crunches"
       },
 
       {
         name: "Side Jack-Knives",
         cc: true,
-        img: "side-jack-knives.gif",
+        img: "side-jack-knives",
         time: 60
       },
 
       {
         name: "Alternating Toe Taps",
         cc: false,
-        img: "alternating-toe-taps.gif"
+        img: "alternating-toe-taps"
       },
 
       {
         name: "Sitting Punches",
         cc: false,
-        img: "sitting-punches.gif"
+        img: "sitting-punches"
       },
 
       {
         name: "Seated Corkscrews",
         cc: false,
-        img: "seated-corkscrews.gif"
+        img: "seated-corkscrews"
       },
 
       {
         name: "Reverse Corkscrews",
         cc: false,
-        img: "reverse-corkscrews.gif"
+        img: "reverse-corkscrews"
       },
 
       {
         name: "Elbow Knee Tucks",
         cc: false,
-        img: "elbow-knee-tucks.gif"
+        img: "elbow-knee-tucks"
       },
 
       {
         name: "Side Cycles",
         cc: true,
-        img: "side-cycles.gif",
+        img: "side-cycles",
         time: 60
       },
 
@@ -313,43 +313,43 @@ function App() {
       {
         name: "Otis-Ups",
         cc: false,
-        img: "otis-ups.gif"
+        img: "otis-ups"
       },
 
       {
         name: "Pendulum Plank Reach Outs",
         cc: false,
-        img: "pendulum-plank-reach-outs.gif"
+        img: "pendulum-plank-reach-outs"
       },
 
       {
         name: "Hand-Free Tucks",
         cc: false,
-        img: "hand-free-tucks.gif"
+        img: "hand-free-tucks"
       },
 
       {
         name: "Flutter Kicks",
         cc: false,
-        img: "flutter-kicks.gif"
+        img: "flutter-kicks"
       },
 
       {
         name: "Scissors",
         cc: false,
-        img: "scissors.gif"
+        img: "scissors"
       },
 
       {
         name: "V-Ups",
         cc: false,
-        img: "v-ups.gif"
+        img: "v-ups"
       },
 
       {
         name: "Alternating Elbow Knee Planks",
         cc: false,
-        img: "alternating-elbow-knee-planks.gif"
+        img: "alternating-elbow-knee-planks"
       },
 
     ],
@@ -358,44 +358,44 @@ function App() {
       {
         name: "Starfish Crunches",
         cc: false,
-        img: "starfish-crunches.gif"
+        img: "starfish-crunches"
       },
 
       {
         name: "Alternating Elbow Knee Crunches",
         cc: false,
-        img: "alternating-elbow-knee-crunches.gif"
+        img: "alternating-elbow-knee-crunches"
       },
 
       {
         name: "Alternating Thigh Taps",
         cc: false,
-        img: "alternating-thigh-taps.gif"
+        img: "alternating-thigh-taps"
       },
 
       {
         name: "Rotating V-Ups",
         cc: false,
-        img: "rotating-v-ups.gif"
+        img: "rotating-v-ups"
       },
 
       {
         name: "Dead Bugs",
         cc: false,
-        img: "dead-bugs.gif"
+        img: "dead-bugs"
       },
 
       {
         name: "Side Scissor Crunches",
         cc: true,
-        img: "side-scissor-crunches.gif",
+        img: "side-scissor-crunches",
         time: 60
       },
 
       {
         name: "Plank Toe Taps",
         cc: false,
-        img: "plank-toe-taps.gif"
+        img: "plank-toe-taps"
       },
 
     ],
@@ -404,49 +404,49 @@ function App() {
       {
         name: "Levitation Crunches",
         cc: false,
-        img: "levitation-crunches.gif"
+        img: "levitation-crunches"
       },
 
       {
         name: "Frog Crunches",
         cc: false,
-        img: "frog-crunches.gif"
+        img: "frog-crunches"
       },
 
       {
         name: "90/90 Crunches",
         cc: false,
-        img: "90-90-crunches.gif"
+        img: "90-90-crunches"
       },
 
       {
         name: "Butterfly Sit-Ups",
         cc: false,
-        img: "butterfly-sit-ups.gif"
+        img: "butterfly-sit-ups"
       },
 
       {
         name: "Hundreds",
         cc: false,
-        img: "hundreds.gif"
+        img: "hundreds"
       },
 
       {
         name: "Sit-Ups",
         cc: false,
-        img: "sit-ups.gif"
+        img: "sit-ups"
       },
 
       {
         name: "Corpse-Crunches",
         cc: false,
-        img: "corpse-crunches.gif"
+        img: "corpse-crunches"
       },
 
       {
         name: "Upper-Circle-Crunches",
         cc: true,
-        img: "upper-circle-crunches.gif",
+        img: "upper-circle-crunches",
         time: 60
       },
     ],
@@ -455,7 +455,7 @@ function App() {
       {
         name: "Rest",
         cc: false,
-        img: "rest.gif",
+        img: "rest",
         time: 30
       },
     ]
@@ -549,15 +549,15 @@ function App() {
 
     const ccworkoutVariations = [
       // Seated Ab Circle - bottom-up
-      [{name: "Seated Ab Circles (Clockwise)",cc: true,img: "seated-ab-circles.gif",time: 60},{name: "Seated Ab Circles (Counter Clockwise)",cc: true,img: "seated-ab-circles-cc.gif",time: 60},ccrandomObliques,ccrest,ccrandomMidRange,ccrandomTopDownRotation,ccrest,ccrandomTopDown],
+      [{name: "Seated Ab Circles (Clockwise)",cc: true,img: "seated-ab-circles",time: 60},{name: "Seated Ab Circles (Counter Clockwise)",cc: true,img: "seated-ab-circles-cc",time: 60},ccrandomObliques,ccrest,ccrandomMidRange,ccrandomTopDownRotation,ccrest,ccrandomTopDown],
       // Side Jack Knives - obliques
-      [ccrandomBottomUp,ccrandomBottomUpRotation,ccrest,{name: "Side Jack-Knives (Left Side)", cc: true, img: "side-jack-knives.gif", time: 60},{name: "Side Jack-Knives (Right Side)", cc: true, img: "side-jack-knives-cc.gif", time: 60},ccrandomMidRange,ccrest,ccrandomTopDown],
+      [ccrandomBottomUp,ccrandomBottomUpRotation,ccrest,{name: "Side Jack-Knives (Left Side)", cc: true, img: "side-jack-knives", time: 60},{name: "Side Jack-Knives (Right Side)", cc: true, img: "side-jack-knives-cc", time: 60},ccrandomMidRange,ccrest,ccrandomTopDown],
       // Side Cycles - obliques
-      [ccrandomBottomUp,ccrandomBottomUpRotation,ccrest,{name: "Side Cycles (Left Side)",cc: true,img: "side-cycles.gif",time: 60},{name: "Side Cycles (Right Side)",cc: true,img: "side-cycles-cc.gif",time: 60},ccrest,ccrandomTopDownRotation,ccrandomTopDown],
+      [ccrandomBottomUp,ccrandomBottomUpRotation,ccrest,{name: "Side Cycles (Left Side)",cc: true,img: "side-cycles",time: 60},{name: "Side Cycles (Right Side)",cc: true,img: "side-cycles-cc",time: 60},ccrest,ccrandomTopDownRotation,ccrandomTopDown],
       // Side Scissor Crunches - top-down-rotation
-      [ccrandomBottomUp,ccrandomBottomUpRotation,ccrandomObliques,ccrest,ccrandomMidRange,ccrandomTopDown,ccrest,{name: "Side Scissor Crunches (Left Side)",cc: true,img: "side-scissor-crunches.gif",time: 60},{name: "Side Scissor Crunches (Right Side)",cc: true,img: "side-scissor-crunches-cc.gif",time: 60}],
+      [ccrandomBottomUp,ccrandomBottomUpRotation,ccrandomObliques,ccrest,ccrandomMidRange,ccrandomTopDown,ccrest,{name: "Side Scissor Crunches (Left Side)",cc: true,img: "side-scissor-crunches",time: 60},{name: "Side Scissor Crunches (Right Side)",cc: true,img: "side-scissor-crunches-cc",time: 60}],
       //Upper-Circle Crunches - top-down
-      [ccrandomBottomUp,ccrandomBottomUpRotation,ccrandomObliques,ccrest,ccrandomMidRange,ccrandomTopDown,ccrest,{name: "Upper-Circle-Crunches (Clockwise)",cc: true,img: "upper-circle-crunches.gif",time: 60},{name: "Upper-Circle-Crunches (Counter Clockwise)",cc: true,img: "upper-circle-crunches-cc.gif",time: 60}],
+      [ccrandomBottomUp,ccrandomBottomUpRotation,ccrandomObliques,ccrest,ccrandomMidRange,ccrandomTopDown,ccrest,{name: "Upper-Circle-Crunches (Clockwise)",cc: true,img: "upper-circle-crunches",time: 60},{name: "Upper-Circle-Crunches (Counter Clockwise)",cc: true,img: "upper-circle-crunches-cc",time: 60}],
       
       //Normal Random 3r2r1 (Balance out the CCs)
       [ccrandomBottomUp,ccrandomBottomUpRotation,ccrandomObliques,ccrest,ccrandomMidRange,ccrandomTopDownRotation,ccrest,ccrandomTopDown],
@@ -742,39 +742,6 @@ function App() {
       <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#089daf" />
       <meta name="msapplication-TileColor" content="#9ed6c4" />
       <meta name="theme-color" content="#9ed6c4" />
-
-      {/*Content Meta Tags*/}
-      <meta name="keywords" content="ab workout, 6 pack, 6 pack abs, six pack, abs, how to get abs, abdominal, abdominals, abdominal muscles, workout, guided workout, quick abs, ab timer, workout timer, obliques" />
-      <meta name="description" content="AbShift is an effective follow along abdominal workout randomizer. Each workout provides total coverage of the abdominal muscles by targeting bottom-up, mid-range, top-down, and rotational movements." />
-      <meta name="subject" content="Simple, effective, and scientifically generated abdominal muscle workouts" />
-      <meta name="copyright"content="FossFitness - Built by odacavo" />
-      <meta name="language" content="en" />
-      <meta name="url" content="https://abshift.com" />
-      <meta name="identifier-URL" content="https://abshift.com" />
-
-      {/*Open Graph*/}
-      <meta property="og:title" content="AbShift - Workout Generator" />
-      <meta property="og:site_name" content="AbShift - Workout Generator" />
-      <meta property="og:url" content="https://abshift.com" />
-      <meta property="og:description" content="AbShift is an effective follow along abdominal workout randomizer. Each  workout provides total coverage of the abdominal muscles by targeting bottom-up, mid-range, top-down, and rotational movements."/>
-      <meta property="og:type" content="fitness.course" />
-
-      {/*Misc SEO*/}
-      <meta itemprop="name" content="AbShift - Workout Generator"/>
-      <meta itemprop="description" content="AbShift is an effective follow along abdominal workout randomizer. Each workout provides total coverage of the abdominal muscles by targeting bottom-up, mid-range, top-down, and rotational movements."/>
-     
-      <meta name="twitter:card" content="summary"/>
-      <meta name="twitter:site" content="@odacavo"/>
-      <meta name="twitter:title" content="AbShift - Workout Generator"/>
-      <meta name="twitter:description" content="AbShift is an effective follow along abdominal workout randomizer. Each workout provides total coverage of the abdominal muscles by targeting bottom-up, mid-range, top-down, and rotational movements."/>
-      <meta name="twitter:image" content="https://www.abshift.com/mstile-310x310.png"/>
-
-      <meta name="og:title" content="AbShift - Workout Generator"/>
-      <meta name="og:description" content="AbShift is an effective follow along abdominal workout randomizer. Each workout provides total coverage of the abdominal muscles by targeting bottom-up, mid-range, top-down, and rotational movements."/>
-      <meta name="og:url" content="https://abshift.com"/>
-      <meta name="og:site_name" content="AbShift - Workout Generator"/>
-      <meta name="og:locale" content="en_US"/>
-      <meta name="og:type" content="website"/>
     </Helmet>
 
     <Router>

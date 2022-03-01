@@ -269,7 +269,7 @@ const WorkoutUI = ({
 
 
                 <div className="exerciseImg">
-                    <img alt="Exercise Demonstration" src={"images/exercises/" + workoutList[workoutLevelState].img}/>
+                    <img alt="Exercise Demonstration" src={"images/exercises/" + workoutList[workoutLevelState].img + ".gif"}/>
                 </div>
 
 
