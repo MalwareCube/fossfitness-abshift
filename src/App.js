@@ -69,6 +69,8 @@ function App() {
   //useEffect - listens for the change in the 'difficulty' state. When it notices it, it calls the shuffle function again
   useEffect(() => {
     workoutShuffler()
+
+  
   }, [difficulty])
 
 

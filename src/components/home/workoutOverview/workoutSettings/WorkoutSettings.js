@@ -22,6 +22,17 @@ const WorkoutSettings = ({
     workoutShuffler,
 }) => {
 
+
+    //Difficulty Set Handler
+    function difficultyHandler(diffValue) {
+    
+    //onSetDifficulty, pass in argument
+    onSetDifficulty(diffValue)
+
+    //Update CountAPI
+    fetch('https://api.countapi.xyz/hit/abshift.com/abshift')
+    }
+
   return (
     <StyledWorkoutSettings>
         <span onClick={toggleSettings} className="settingsCloseIcon"><RiCloseFill tabIndex="0" title="Close Settings Menu" description="Clicking this button will close the Workout Settings menu."/></span>
@@ -35,17 +46,17 @@ const WorkoutSettings = ({
             {/*If state.difficultySetting=0 , insert classname "selectedDifficulty" under the first div, etc.*/}
 
             <div className="difficultySettings">
-                <button onClick={() => onSetDifficulty(1)} className={`difficultySetting ${isBeginner ? "selectedDifficulty" : ""}`}>
+                <button onClick={() => difficultyHandler(1)} className={`difficultySetting ${isBeginner ? "selectedDifficulty" : ""}`}>
                     <img alt="Beginner Difficulty" src={Beginner}/>
                     <h4>Beginner</h4>
                 </button>
 
-                <button onClick={() => onSetDifficulty(2)} className={`difficultySetting ${isIntermediate ? "selectedDifficulty" : ""}`}>
+                <button onClick={() => difficultyHandler(2)} className={`difficultySetting ${isIntermediate ? "selectedDifficulty" : ""}`}>
                     <img alt="Intermediate Difficulty" src={Intermediate}/>
                     <h4>Intermediate</h4>
                 </button>
 
-                <button onClick={() => onSetDifficulty(3)} className={`difficultySetting ${isAdvanced ? "selectedDifficulty" : ""}`}>
+                <button onClick={() => difficultyHandler(3)} className={`difficultySetting ${isAdvanced ? "selectedDifficulty" : ""}`}>
                     <img alt="Advanced Difficulty" src={Advanced}/>
                     <h4>Advanced</h4>
                 </button>

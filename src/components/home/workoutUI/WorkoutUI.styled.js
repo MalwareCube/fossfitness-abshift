@@ -89,6 +89,7 @@ export const StyledWorkoutUI = styled.div`
     & .exerciseImg img {
         max-width: 100%;
         mix-blend-mode: screen;
+        transition: all 5s;
     }
 
 

@@ -11,11 +11,10 @@ import { IoPlay, IoPause } from 'react-icons/io5'
 import ProgressBar from './progressBar/ProgressBar'
 import WorkoutTimerFooter from './workoutTimerFooter/WorkoutTimerFooter'
 
-//Sound Effects
-import audioSprite from '../../../audio/audiosprite.mp3'
-
 //React Helmet
 import { Helmet, HelmetProvider } from 'react-helmet-async';
+
+
 
 const WorkoutUI = ({
     workoutList,
@@ -270,6 +269,7 @@ const WorkoutUI = ({
 
                 <div className="exerciseImg">
                     <img alt="Exercise Demonstration" src={"images/exercises/" + workoutList[workoutLevelState].img + ".gif"}/>
+                    
                 </div>
 
 

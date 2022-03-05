@@ -1,5 +1,23 @@
 import styled from "styled-components";
 
+//Body Gradient Randomizer
+
+const gradSwatches = ['#27a2e9, #3936d4, #c41ac4, #7127e9', '#6141d3, #00B4DB, #0083B0, #27a2e9', '#a12fff, #2484dd', '#23cc99, #0083B0']
+
+//Randomize order
+for (let i = gradSwatches.length - 1; i > 0; i--) {
+  const j = Math.floor(Math.random() * (i + 1));
+  [gradSwatches[i], gradSwatches[j]] = [gradSwatches[j], gradSwatches[i]];
+}
+
+//Add commas except for last
+for (let i = 0; i < (gradSwatches.length -1); i++) {
+  gradSwatches[i] = gradSwatches[i] + ","
+} 
+
+const gradSwatchesSize = (200 * gradSwatches.length) * 3
+const gradSwatchesTime = (gradSwatches.length * 30) * 3
+
 export const StyledGreeting = styled.div`
 
     & h3 {
@@ -15,5 +33,40 @@ export const StyledGreeting = styled.div`
     
     transition: all var(--transitionDefault);
     }
+    
+    & .hitCount {
+        background-color: var(--M1);
+     
+        padding-right: 5px;
+        line-height: 2em;
 
+        font-weight: 600;
+        color: white;
+
+        font-size: 1.2em;
+
+        background-image: var(--gradient);
+        background-size: 700%;
+        animation: bg-animation 5s infinite alternate;
+
+        transition: all var(--transitionDefault);
+        
+        user-select: none;
+        cursor: default;
+        
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+
+        -webkit-text-stroke-width: .5px;
+        text-stroke-width: .5px;
+        
+    }
+
+
+
+  @keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
 `

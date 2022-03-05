@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 //Styled Components
 import { StyledGreeting } from './Greeting.styled'
@@ -40,13 +40,31 @@ const Greeting = ({
   function greetingClick() {
     addLevelState()
     workoutShuffler()
+
+    //Update CountAPI
+    fetch('https://api.countapi.xyz/hit/abshift.com/abshift')
   }
+
+
+
+  //Get the CountAPI current hit count
+
+  //Set hit counter state
+  const [countState, setCountState] = useState(() => {
+    let countValue = 0
+    fetch('https://api.countapi.xyz/get/abshift.com/abshift')
+    .then(res => res.json())
+    .then(res => {
+      setCountState(res.value.toLocaleString())
+    })
+  })
 
   return (
       <StyledGreeting>
         <h2>{welcomeGreetingMessage}</h2>
         <h3>{welcomeGreetingSub}</h3>
         <p>AbShift is an effective follow along abdominal workout randomizer. Each workout provides total coverage of the abdominal muscles by targeting bottom-up, mid-range, top-down, and rotational movements.</p>
+        <p><span className="hitCount">{countState}</span> total workouts generated!</p>
         <button onClick={greetingClick}>Begin</button>
         <small>AbShift was created with 💪 by <a href="https://twitter.com/odacavo">odacavo</a></small>
       </StyledGreeting>
