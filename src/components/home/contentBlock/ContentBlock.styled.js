@@ -13,6 +13,9 @@ export const StyledContentBlock = styled.div`
 
     transition: all var(--transitionDefault);
 
+    position: relative;
+    overflow: hidden;
+
     //Tablet
     @media only screen and (min-width: 640px) {
         margin: auto;

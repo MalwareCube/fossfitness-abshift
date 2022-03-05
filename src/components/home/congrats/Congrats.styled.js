@@ -47,6 +47,16 @@ export const StyledCongrats = styled.div`
         display: none;
     }
 
+    & #confettiCanvas {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 0;
+   
+        pointer-events: none;
+        overflow: hidden;
+    }
+
     //Larger Phones
     @media only screen and (min-width: 440px) {
     & .backHomeButtonSpan {
