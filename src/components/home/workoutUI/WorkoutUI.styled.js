@@ -11,6 +11,7 @@ export const StyledWorkoutUI = styled.div`
     & .footerSaver {
         height: 150px;
         transition: all var(--transitionDefault);
+        position: relative;
     }
 
     //Exercise Header
@@ -118,13 +119,10 @@ export const StyledWorkoutUI = styled.div`
         opacity: .9;
         transition: all var(--transitionDefault);
         display: none;
-        margin: 0;
-        padding: 0;
 
         width: 100%;
 
-        position: absolute;
-        bottom: -20px;
+        position: fixed;
     }
 
     & .mobileNext h3 {
@@ -148,6 +146,7 @@ export const StyledWorkoutUI = styled.div`
         max-width: 350px;
         margin: 0 auto;
         transition: all var(--transitionDefault);
+        position: relative;
     }
 
     & .playbackButtons button {
@@ -279,49 +278,65 @@ export const StyledWorkoutUI = styled.div`
 
 
 
-        /*Mobile Next Up Display - Ensure mobile width AND height is at least 750px*/
-        @media only screen and (max-width:999px) and (min-height:750px) { 
-            & .mobileNext {
-                display: block;
-            }
-        }
+
 
         /*Mobile Next Width Tweak*/
-        @media only screen and (max-width:350px) and (max-height:750px) { 
+        @media only screen and (min-width: 195px) and (max-width:350px) and (min-height: 300px) { 
             & .mobileNext {
                 display: block;
-                position: fixed;
-                bottom: 115px;
+                
+                bottom: 110px;
                 left: 0;
+                
                 padding-left: 20px;
                 padding-right: 20px;
+                margin: 0;
             }
         }
 
         /*Mobile Next Width Tweak*/
-        @media only screen and (min-width:351px) and (max-width:550px )and (max-height:750px) { 
+        @media only screen and (min-width:351px) and (max-width:550px) and (min-height: 300px) { 
             & .mobileNext {
                 display: block;
-                position: fixed;
+                
                 bottom: 130px;
                 left: 0;
+                
                 padding-left: 20px;
                 padding-right: 20px;
+                margin: 0;
             }
         }
 
             /*Mobile Next Width Tweak*/
-        @media only screen and (min-width:551px) and (max-width:999px )and (max-height:750px) { 
+            @media only screen and (min-width:551px) and (max-width:999px) and (min-height: 300px) { 
             & .mobileNext {
                 display: block;
-                position: fixed;
-                bottom: 138px;
+                
+                bottom: 140px;
                 left: 0;
+                
                 padding-left: 20px;
                 padding-right: 20px;
+                margin: 0;
             }
         }
 
+            /*Mobile Next Width Tweak*/
+            @media only screen and (min-height:820px) and (max-width:999px) { 
+            & .mobileNext {
+                display: block;
+                
+                bottom: 160px;
+                left: 0;
+                
+                padding-left: 20px;
+                padding-right: 20px;
+                margin: 0;
+
+                font-size: 1.2em;
+            }
+        }
 
 
 
