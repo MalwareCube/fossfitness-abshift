@@ -167,10 +167,8 @@ html {
   -moz-user-select: none;
   -ms-user-select: none;
   
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
-  min-height: fill-available;
-  min-height: -moz-available;
+  min-height: 100%;
+
 }
 
 body {
@@ -182,7 +180,7 @@ body {
   animation: bg-animation ${gradSwatchesTime}s infinite alternate;
   overflow-x: hidden;
 
-  min-height: 100vh;
+  min-height: 100%;
 }
 
 
