@@ -34,8 +34,8 @@ const Header = ({
           <div className="volumeBlock">
             <div className="volumeButton">
               {/*If volumeState is true, show the mute button. If false, show the unmute button*/}
-              {volumeState ? <button label="Mute Volume" className="soundButton" onClick={toggleVolume}><IoVolumeHighSharp title="Mute Volume" description="Toggling this icon will mute and unmute audio playback on this site." size="100%"/></button>
-              : <button label="Unmute Volume" className="soundButton" onClick={toggleVolume}><IoVolumeMuteSharp title="Unmute Volume" description="Toggling this icon will mute and unmute audio playback on this site." size="100%"/></button> }
+              {volumeState ? <button className="soundButton" onClick={toggleVolume}><IoVolumeHighSharp title="Mute Volume" description="Toggling this icon will mute and unmute audio playback on this site." size="100%"/></button>
+              : <button className="soundButton" onClick={toggleVolume}><IoVolumeMuteSharp title="Unmute Volume" description="Toggling this icon will mute and unmute audio playback on this site." size="100%"/></button> }
             </div>
           </div>
 

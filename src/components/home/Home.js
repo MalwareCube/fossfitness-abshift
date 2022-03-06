@@ -1,5 +1,8 @@
 import React, {useEffect} from 'react';
 
+//NoSleep.js
+import NoSleep from 'nosleep.js';
+
 //Components
 import ContentBlock from './contentBlock/ContentBlock'
 import Greeting from './greeting/Greeting'
@@ -30,9 +33,13 @@ const Home = ({
 
   //Misc Functions
 
+  //NoSleep
+  var noSleep = new NoSleep();
+
   //When levelState changes (when new UI component renders), scroll the page to the top
   useEffect(() => {
     window.scrollTo(0, 0)
+    noSleep.enable();
   }, [levelState])
 
 

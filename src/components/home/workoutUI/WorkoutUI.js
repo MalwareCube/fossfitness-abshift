@@ -313,7 +313,7 @@ const WorkoutUI = ({
 
 
 
-                <button onClick={togglePlayState} className="playButton">{playState ? <IoPause/> : <IoPlay/>}</button>
+                <button onClick={togglePlayState} className="playButton">{playState ? <IoPause title="Pause Workout" description="Clicking this button will pause the workout."/> : <IoPlay title="Play Workout" description="Clicking this button will resume and play the workout."/>}</button>
                 {/*If last exercise, change "Next" to "Finish / End Workout" */}
 
 

@@ -93,7 +93,6 @@ html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  user-select: none;
 }
 
 *, *:before, *:after {
@@ -162,21 +161,27 @@ html {
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale;
+
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  width: 100%;
+  height: 100%;
 }
 
 body {
   font-family: var(--mainFont);
   font-size: 16px;
   
-  min-height: 100vh;
+  width: 100%;
+  height: 100%;
   background-image: var(--gradient);
   background-size: ${gradSwatchesSize}%;
   animation: bg-animation ${gradSwatchesTime}s infinite alternate;
   overflow-x: hidden;
-}
 
-.test {
-  background-image: none;
+  //min-height: 100vh;
 }
 
 ::selection {
