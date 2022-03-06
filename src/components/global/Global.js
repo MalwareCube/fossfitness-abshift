@@ -166,17 +166,23 @@ html {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+  
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  min-height: fill-available;
+  min-height: -moz-available;
 }
 
 body {
   font-family: var(--mainFont);
   font-size: 16px;
   
-  min-height: 100vh;
   background-image: var(--gradient);
   background-size: ${gradSwatchesSize}%;
   animation: bg-animation ${gradSwatchesTime}s infinite alternate;
   overflow-x: hidden;
+
+  min-height: 100vh;
 }
 
 
