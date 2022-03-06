@@ -35,7 +35,7 @@ const WorkoutSettings = ({
 
   return (
     <StyledWorkoutSettings>
-        <span onClick={toggleSettings} className="settingsCloseIcon"><RiCloseFill tabIndex="0" title="Close Settings Menu" description="Clicking this button will close the Workout Settings menu."/></span>
+        <button label="Close Settings Menu" onClick={toggleSettings} className="settingsCloseIcon"><RiCloseFill tabIndex="0" title="Close Settings Menu" description="Clicking this button will close the Workout Settings menu."/></button>
 
         <div className="workoutOverviewTitle">
             <h2>Workout Settings</h2>
@@ -46,17 +46,17 @@ const WorkoutSettings = ({
             {/*If state.difficultySetting=0 , insert classname "selectedDifficulty" under the first div, etc.*/}
 
             <div className="difficultySettings">
-                <button onClick={() => difficultyHandler(1)} className={`difficultySetting ${isBeginner ? "selectedDifficulty" : ""}`}>
+                <button label="Beginner Difficulty" onClick={() => difficultyHandler(1)} className={`difficultySetting ${isBeginner ? "selectedDifficulty" : ""}`}>
                     <img alt="Beginner Difficulty" src={Beginner}/>
                     <h4>Beginner</h4>
                 </button>
 
-                <button onClick={() => difficultyHandler(2)} className={`difficultySetting ${isIntermediate ? "selectedDifficulty" : ""}`}>
+                <button label="Intermediate Difficulty" onClick={() => difficultyHandler(2)} className={`difficultySetting ${isIntermediate ? "selectedDifficulty" : ""}`}>
                     <img alt="Intermediate Difficulty" src={Intermediate}/>
                     <h4>Intermediate</h4>
                 </button>
 
-                <button onClick={() => difficultyHandler(3)} className={`difficultySetting ${isAdvanced ? "selectedDifficulty" : ""}`}>
+                <button label="Advanced Difficulty" onClick={() => difficultyHandler(3)} className={`difficultySetting ${isAdvanced ? "selectedDifficulty" : ""}`}>
                     <img alt="Advanced Difficulty" src={Advanced}/>
                     <h4>Advanced</h4>
                 </button>

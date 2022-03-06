@@ -143,8 +143,8 @@ return (
             <h3>Total Workout Time: {totalWorkoutTime}</h3>
                 <div className="workoutOverviewButtonContainer">
                     <button onClick={addLevelState} className="startWorkoutButton">Start<span className="startWorkoutButtonSpan"> Workout</span></button>
-                    <button onClick={handleShuffle} className="reshuffleButton"><TiArrowShuffle title="Reshuffle Workout" description="Clicking this button will reshuffle the workout's exercise list"/></button>
-                    <button onClick={toggleSettings} className="settingsButton"><IoSettingsSharp title="Workout Settings" description="Clicking this button will open the workout's settings menu"/></button>
+                    <button label="Reshuffle Workout" onClick={handleShuffle} className="reshuffleButton"><TiArrowShuffle title="Reshuffle Workout" description="Clicking this button will reshuffle the workout's exercise list"/></button>
+                    <button label="Workout Settings" onClick={toggleSettings} className="settingsButton"><IoSettingsSharp title="Workout Settings" description="Clicking this button will open the workout's settings menu"/></button>
                 </div>
         </div>
 

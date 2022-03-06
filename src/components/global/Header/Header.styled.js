@@ -35,4 +35,13 @@ export const StyledHeader = styled.header`
         opacity: .8;
         cursor: pointer;
     }
+
+    & .soundButton {
+        background: initial;
+        border-radius: none;
+        border: none;
+        padding: 0;
+        margin: 0;
+        line-height: 0;
+    }
 `

@@ -93,6 +93,7 @@ html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  user-select: none;
 }
 
 *, *:before, *:after {

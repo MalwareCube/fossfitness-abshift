@@ -43,6 +43,9 @@ const WorkoutUI = ({
     function addWorkoutLevelState() {
       let prevLevel = workoutLevelState
       setWorkoutLevelState(prevLevel + 1)
+
+        //Update CountAPI for exercises completed
+        fetch('https://api.countapi.xyz/hit/abshift.com/abshift-exercises')
     }
   
     function subWorkoutLevelState() {

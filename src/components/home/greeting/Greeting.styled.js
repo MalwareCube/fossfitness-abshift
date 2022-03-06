@@ -33,12 +33,32 @@ export const StyledGreeting = styled.div`
     
     transition: all var(--transitionDefault);
     }
+
+    
+
+    & .greetingStats {
+      margin-top: 5px;
+      margin-bottom: 30px;
+      color: var(--W3);
+      transition: all .2s;
+    }
+
+    & .greetingStats h4 {
+      font-weight: 600;
+      margin-bottom: 10px;
+      margin-top: 30px;
+      font-size: .95em;
+      color: var(--W3);
+    }
+
+    & .greetingStats li {
+      margin-top: 6px;
+    }
     
     & .hitCount {
         background-color: var(--M1);
      
         padding-right: 5px;
-        line-height: 2em;
 
         font-weight: 600;
         color: white;

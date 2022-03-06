@@ -49,13 +49,21 @@ const Greeting = ({
 
   //Get the CountAPI current hit count
 
-  //Set hit counter state
+  //Set workout generated hit counter state
   const [countState, setCountState] = useState(() => {
-    let countValue = 0
     fetch('https://api.countapi.xyz/get/abshift.com/abshift')
     .then(res => res.json())
     .then(res => {
       setCountState(res.value.toLocaleString())
+    })
+  })
+
+  //Set exercises completed hit counter state
+  const [countExercisesState, setCountExercisesState] = useState(() => {
+    fetch('https://api.countapi.xyz/get/abshift.com/abshift-exercises')
+    .then(res => res.json())
+    .then(res => {
+      setCountExercisesState(res.value.toLocaleString())
     })
   })
 
@@ -64,7 +72,14 @@ const Greeting = ({
         <h2>{welcomeGreetingMessage}</h2>
         <h3>{welcomeGreetingSub}</h3>
         <p>AbShift is an effective follow along abdominal workout randomizer. Each workout provides total coverage of the abdominal muscles by targeting bottom-up, mid-range, top-down, and rotational movements.</p>
-        <p><span className="hitCount">{countState}</span> total workouts generated!</p>
+        
+        <ul className="greetingStats">
+        <h4>AbShift Stats:</h4>
+          <li><span className="hitCount">{countState}</span> workouts generated</li>
+          <li><span className="hitCount">{countExercisesState}</span> exercises completed</li>
+        </ul>
+        
+        
         <button onClick={greetingClick}>Begin</button>
         <small>AbShift was created with 💪 by <a href="https://twitter.com/odacavo">odacavo</a></small>
       </StyledGreeting>

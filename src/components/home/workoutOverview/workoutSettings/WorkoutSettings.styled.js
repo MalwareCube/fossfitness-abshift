@@ -15,6 +15,14 @@ export const StyledWorkoutSettings = styled.div`
         cursor: pointer;
 
         transition: all var(--transitionDefault);
+
+        background: initial;
+        border-radius: none;
+        border: none;
+        padding: 0;
+        margin: 0;
+        line-height: 0;
+        width: auto;
     }
 
     & .settingsCloseIcon:hover {
