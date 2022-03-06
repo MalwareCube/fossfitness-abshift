@@ -113,6 +113,30 @@ export const StyledWorkoutUI = styled.div`
         color: var(--W1);
     }
 
+    & .mobileNext {
+        text-align: center;
+        opacity: .9;
+        transition: all var(--transitionDefault);
+        display: none;
+        margin: 0;
+        padding: 0;
+
+        width: 100%;
+
+        position: absolute;
+        bottom: -20px;
+    }
+
+    & .mobileNext h3 {
+        color: var(--W1);
+        font-size: .9em;
+        line-height: 1.3;
+    }
+
+    & .mobileNextBold {
+        font-weight: 800;
+    }
+
 
     //Playback Buttons
     & .playbackButtons {
@@ -155,6 +179,14 @@ export const StyledWorkoutUI = styled.div`
            & .playButton {
         font-size: 1.4em !important;
         }
+
+        & .exerciseHeader h2 {
+                font-size: 1.5em;
+            }
+
+            & .exerciseHeader h3 {
+                font-size: .9em;
+            }
      }
 
 
@@ -178,7 +210,7 @@ export const StyledWorkoutUI = styled.div`
     }
 
      /*Desktop*/
-     @media only screen and (min-width : 1200px) {
+     @media only screen and (min-width : 1000px) {
         & .completedEx {
         display: block;
         }
@@ -227,6 +259,14 @@ export const StyledWorkoutUI = styled.div`
                 filter: blur(1px);
             }
 
+            & .exerciseHeader h2 {
+                font-size: 1.5em;
+            }
+
+            & .exerciseHeader h3 {
+                font-size: .9em;
+            }
+
         }
 
         /*If screen height is less than 300, just give up on the buttons*/
@@ -236,4 +276,54 @@ export const StyledWorkoutUI = styled.div`
                 pointer-events: none;
             }
         }
+
+
+
+        /*Mobile Next Up Display - Ensure mobile width AND height is at least 750px*/
+        @media only screen and (max-width:999px) and (min-height:750px) { 
+            & .mobileNext {
+                display: block;
+            }
+        }
+
+        /*Mobile Next Width Tweak*/
+        @media only screen and (max-width:350px) and (max-height:750px) { 
+            & .mobileNext {
+                display: block;
+                position: fixed;
+                bottom: 115px;
+                left: 0;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+
+        /*Mobile Next Width Tweak*/
+        @media only screen and (min-width:351px) and (max-width:550px )and (max-height:750px) { 
+            & .mobileNext {
+                display: block;
+                position: fixed;
+                bottom: 130px;
+                left: 0;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+
+            /*Mobile Next Width Tweak*/
+        @media only screen and (min-width:551px) and (max-width:999px )and (max-height:750px) { 
+            & .mobileNext {
+                display: block;
+                position: fixed;
+                bottom: 138px;
+                left: 0;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+
+
+
+
+        
 `

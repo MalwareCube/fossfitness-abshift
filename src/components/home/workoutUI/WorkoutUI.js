@@ -273,6 +273,25 @@ const WorkoutUI = ({
                 <div className="exerciseImg">
                     <img alt="Exercise Demonstration" src={"images/exercises/" + workoutList[workoutLevelState].img + ".gif"}/>
                     
+                    <div className="mobileNext">
+
+                    {/* Conditional Rendering - If the workout index state is NOT 0, then show "previouis workout". Else (for first exercise) don't show it */}
+                    {(() => {
+                    if (workoutLevelState >= (workoutList.length - 1)) {
+                    return (
+                        <>
+                        </>
+                        )
+                        } else {
+                            return(
+                                <>
+                                    <h3><span className="mobileNextBold">Next:</span> {workoutList[workoutLevelState + 1].name} ({workoutList[workoutLevelState + 1].time}s)</h3>
+                                </>
+                            )
+                        }
+                    })()}
+                    </div>
+                    
                 </div>
 
 
@@ -297,7 +316,6 @@ const WorkoutUI = ({
                     })()}
                 </div>
             </div>
-
 
             <div className="playbackButtons">
 
