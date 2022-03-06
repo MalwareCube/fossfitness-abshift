@@ -322,21 +322,7 @@ export const StyledWorkoutUI = styled.div`
             }
         }
 
-            /*Mobile Next Width Tweak*/
-            @media only screen and (min-height:821px) and (max-width:999px) { 
-            & .mobileNext {
-                display: block;
-                
-                bottom: 160px;
-                left: 0;
-                
-                padding-left: 20px;
-                padding-right: 20px;
-                margin: 0;
 
-                font-size: 1.2em;
-            }
-        }
 
 
 
