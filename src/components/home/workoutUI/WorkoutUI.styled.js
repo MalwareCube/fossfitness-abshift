@@ -224,7 +224,7 @@ export const StyledWorkoutUI = styled.div`
     }
 
     /*On taller screen heights, bump the top padding down a bit to make it look more proportional*/
-    @media only screen and (min-height : 820px) {
+    @media only screen and (min-height : 821px) {
         & .exerciseHeader {
             margin-top: 60px;
             margin-bottom: 40px;
@@ -323,7 +323,7 @@ export const StyledWorkoutUI = styled.div`
         }
 
             /*Mobile Next Width Tweak*/
-            @media only screen and (min-height:820px) and (max-width:999px) { 
+            @media only screen and (min-height:821px) and (max-width:999px) { 
             & .mobileNext {
                 display: block;
                 
