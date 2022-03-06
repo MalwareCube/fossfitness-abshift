@@ -166,23 +166,19 @@ html {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  width: 100%;
-  height: 100%;
 }
 
 body {
   font-family: var(--mainFont);
   font-size: 16px;
   
-  width: 100%;
-  height: 100%;
+  min-height: 100vh;
   background-image: var(--gradient);
   background-size: ${gradSwatchesSize}%;
   animation: bg-animation ${gradSwatchesTime}s infinite alternate;
   overflow-x: hidden;
-
-  //min-height: 100vh;
 }
+
 
 ::selection {
   background-color: var(--M1);
