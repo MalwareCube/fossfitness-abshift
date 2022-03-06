@@ -281,5 +281,16 @@ small {
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~End Of Animations/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 
+/*Remove hover effects if no hover detected*/
+@media (hover: none) {
+    .button {
+        opacity: 1;
+    }
+
+    .button:hover {
+        opacity: 1;
+    }
+
+
 `
 export default GlobalStyles

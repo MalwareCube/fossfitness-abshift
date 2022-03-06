@@ -123,6 +123,7 @@ export const StyledWorkoutUI = styled.div`
         width: 100%;
 
         position: fixed;
+        pointer-events: none;
     }
 
     & .mobileNext h3 {
