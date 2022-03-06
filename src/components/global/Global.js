@@ -249,10 +249,8 @@ button {
 
   cursor: pointer;
   transition: all var(--transitionDefault);
-}
 
-button:hover {
-  opacity: .8;
+  opacity: 1;
 }
 
 small {
@@ -282,15 +280,11 @@ small {
 
 
 /*Remove hover effects if no hover detected*/
-@media (hover: none) {
-    .button {
-        opacity: 1;
-    }
-
-    .button:hover {
-        opacity: 1;
-    }
-
+@media (hover: hover) {
+    button:hover {
+    opacity: .8;
+  }
+}
 
 `
 export default GlobalStyles
