@@ -140,7 +140,7 @@ export const StyledWorkoutUI = styled.div`
     //Playback Buttons
     & .playbackButtons {
         display: flex;
-        column-gap: 20px;
+        
         justify-content: center;
         align-items: stretch;
 
@@ -148,6 +148,14 @@ export const StyledWorkoutUI = styled.div`
         margin: 0 auto;
         transition: all var(--transitionDefault);
         position: relative;
+    }
+
+    & .playbackButtons button {
+        margin-right: 20px;
+    }
+
+    & .playbackButtons button:last-child {
+        margin-right: 0px;
     }
 
     & .playbackButtons button {
@@ -193,8 +201,16 @@ export const StyledWorkoutUI = styled.div`
      /*Larger Phones / Tablets*/
     @media only screen and (min-width : 550px) {
         & .playbackButtons {
-            column-gap: 30px;
+            
             max-width: 360px;
+        }
+
+        & .playbackButtons button {
+            margin-right: 30px;
+        }
+
+        & .playbackButtons button:last-child {
+            margin-right: 0px;
         }
 
         & .exerciseHeader h2 {

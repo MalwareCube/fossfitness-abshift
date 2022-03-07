@@ -29,7 +29,14 @@ export const StyledCongrats = styled.div`
         display: flex;
         align-items: space-between;
         justify-content: center;
-        column-gap: 20px;
+    }
+
+    & .congratsButtons button {
+        margin-right: 20px;
+    }
+
+    & .congratsButtons button:last-child {
+        margin-right: 0px;
     }
 
     & .homeButton {
@@ -40,7 +47,10 @@ export const StyledCongrats = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
-        column-gap: 10px;
+    }
+
+    & .shareButton svg {
+        margin-left: 10px;
     }
 
     & .backHomeButtonSpan {

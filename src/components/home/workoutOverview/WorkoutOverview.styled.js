@@ -81,9 +81,16 @@ export const StyledWorkoutOverview = styled.div`
     & .workoutOverviewButtonContainer {
         display: flex;
         justify-content: center;
-        column-gap: 10px;
         margin-top: 20px;
         margin-bottom: 5px;
+    }
+
+    & .workoutOverviewButtonContainer button {
+        margin-right: 10px;
+    }
+
+    & .workoutOverviewButtonContainer button:last-child {
+        margin-right: 0px;
     }
 
     & .reshuffleButton {
