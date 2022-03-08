@@ -77,6 +77,7 @@ const Greeting = ({
         <h4>AbShift Stats:</h4>
           <li><span className="hitCount">{countState}</span> workouts generated</li>
           <li><span className="hitCount">{countExercisesState}</span> exercises completed</li>
+          <li className="versionNum">Version 1.0.0</li>
         </ul>
         
         

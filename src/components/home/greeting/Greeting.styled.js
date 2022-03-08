@@ -52,7 +52,7 @@ export const StyledGreeting = styled.div`
     }
 
     & .greetingStats li {
-      margin-top: 6px;
+      margin-top: 8px;
     }
     
     & .hitCount {
@@ -80,13 +80,11 @@ export const StyledGreeting = styled.div`
 
         -webkit-text-stroke-width: .5px;
         text-stroke-width: .5px;
-        
     }
 
-
-
-  @keyframes fadeIn {
-    0% {opacity:0;}
-    100% {opacity:1;}
-  }
+    .versionNum {
+      padding-top: 5px;
+      font-size: .9em;
+      opacity: .7;
+    }
 `

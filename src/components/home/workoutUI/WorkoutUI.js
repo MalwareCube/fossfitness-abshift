@@ -44,11 +44,29 @@ const WorkoutUI = ({
       let prevLevel = workoutLevelState
       setWorkoutLevelState(prevLevel + 1)
     }
+
+
+    //Subtract workout state (previous exercise)
   
     function subWorkoutLevelState() {
       let prevLevel = workoutLevelState
       setWorkoutLevelState(prevLevel - 1)
     }
+
+
+
+
+    //Exercise Warm Up Countdown Function
+
+    //useEffect - listen for changes to workoutLevelState (any time next or previous exercise)
+
+    //When detected, do the following
+        //Pause the workout
+        //Stop any current sounds
+        //Call a separate countdown function that handles setTimeout and decreases "i"
+            //This second function has an "if paused, count down, else stop all sounds"
+
+
 
 
 
@@ -59,7 +77,7 @@ const WorkoutUI = ({
         setPlayState(prevPlayState => !prevPlayState)
       }
 
-    
+
 
     /////////////////////Timer States//////////////////////////
     
@@ -247,7 +265,7 @@ const WorkoutUI = ({
             <div className="exerciseHeader">
                 <h4>Set {workoutLevelState + 1} out of {workoutList.length}</h4>
                 <h2>{workoutList[workoutLevelState].name}</h2>
-                <h3>{playState ? `${workoutList[workoutLevelState].time} seconds` : "Workout Paused"}</h3>
+                <h3 id="workoutPaused">{playState ? `${workoutList[workoutLevelState].time} seconds` : "Workout Paused"}</h3>
 
             </div>
             
