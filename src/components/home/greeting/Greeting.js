@@ -82,7 +82,7 @@ const Greeting = ({
         
         
         <button onClick={greetingClick}>Begin</button>
-        <small>AbShift was created with 💪 by <a href="https://twitter.com/odacavo">odacavo</a></small>
+        <small>AbShift was created by <a href="https://github.com/odacavo">odacavo</a></small>
       </StyledGreeting>
   )
 };
