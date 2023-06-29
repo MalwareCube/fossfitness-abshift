@@ -40,32 +40,8 @@ const Greeting = ({
   function greetingClick() {
     addLevelState()
     workoutShuffler()
-
-    //Update CountAPI
-    fetch('https://api.countapi.xyz/hit/abshift.com/abshift')
   }
 
-
-
-  //Get the CountAPI current hit count
-
-  //Set workout generated hit counter state
-  const [countState, setCountState] = useState(() => {
-    fetch('https://api.countapi.xyz/get/abshift.com/abshift')
-    .then(res => res.json())
-    .then(res => {
-      setCountState(res.value.toLocaleString())
-    })
-  })
-
-  //Set exercises completed hit counter state
-  const [countExercisesState, setCountExercisesState] = useState(() => {
-    fetch('https://api.countapi.xyz/get/abshift.com/abshift-exercises')
-    .then(res => res.json())
-    .then(res => {
-      setCountExercisesState(res.value.toLocaleString())
-    })
-  })
 
   return (
       <StyledGreeting>
@@ -74,9 +50,6 @@ const Greeting = ({
         <p>AbShift is an effective follow along abdominal workout randomizer. Each workout provides total coverage of the abdominal muscles by targeting bottom-up, mid-range, top-down, and rotational movements.</p>
         
         <ul className="greetingStats">
-        <h4>AbShift Stats:</h4>
-          <li><span className="hitCount">{countState}</span> workouts generated</li>
-          <li><span className="hitCount">{countExercisesState}</span> exercises completed</li>
           <li className="versionNum">Version 1.0.0</li>
         </ul>
         

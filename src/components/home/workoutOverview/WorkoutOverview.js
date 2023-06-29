@@ -62,9 +62,6 @@ function handleShuffle() {
         window.scrollTo(0, document.body.scrollHeight);
         clearTimeout()
     }, 1);
-
-    //Update CountAPI
-    fetch('https://api.countapi.xyz/hit/abshift.com/abshift')
 }
 
 

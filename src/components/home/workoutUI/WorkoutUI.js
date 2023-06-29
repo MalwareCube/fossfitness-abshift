@@ -215,9 +215,6 @@ const WorkoutUI = ({
             if(timeCurrent === Math.round(workoutList[workoutLevelState].time / 2)) {
                 stop()
                 play({id: 'exerciseHalf'})
-
-                //Update CountAPI for exercises completed
-                fetch('https://api.countapi.xyz/hit/abshift.com/abshift-exercises')
             }
         }
     }, [timeCurrent])
