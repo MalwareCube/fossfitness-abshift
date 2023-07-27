@@ -463,6 +463,13 @@ function App() {
     ]
   }
 
+  Object.keys(masterExerciseList).forEach(key => {
+    masterExerciseList[key].forEach((workout, workoutIndex) => {
+      if (key !== 'rest') {
+        masterExerciseList[key][workoutIndex].type = key;
+      }
+    })
+  });
 
   ///////////////////Master Exercise List Exact Copy (without any exercises that are CC (double/alternating))
   const masterExerciseListFalseCC = Object.assign({}, masterExerciseList)
@@ -511,7 +518,19 @@ function App() {
 
   ///////////////Global Workout Exercise State (The current state for this iteration. Will pull pseudo-randoms from masterExerciseList)
   const [workoutList, setWorkoutList] = useState([])
-  
+
+  // shuffle a single exercise out of the generated workout list
+  function exerciseShuffler(index) {
+    const oldExercise = workoutList[index];
+    const newExercise = masterExerciseList[oldExercise.type][Math.floor(Math.random()*masterExerciseList[oldExercise.type].length)];
+    if (oldExercise.name !== newExercise.name) {
+      workoutList[index] = newExercise;
+      workoutList[index].time = oldExercise.time;
+      setWorkoutList([...workoutList]);
+      return;
+    }
+    exerciseShuffler(index);
+  }
 
   //Workouts are built in 3 functions
   //1. Workout Shuffler - Array Builder - this uses several different workout structure variations to build the base workout: workoutShuffler()
@@ -767,6 +786,7 @@ function App() {
 
       workoutList={workoutList}
       workoutShuffler={workoutShuffler}
+      exerciseShuffler={exerciseShuffler}
 
       volumeState={volumeState}
       stop={stop}

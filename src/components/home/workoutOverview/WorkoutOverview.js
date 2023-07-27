@@ -21,6 +21,7 @@ onSetDifficulty,
 
 workoutList,
 workoutShuffler,
+exerciseShuffler,
 
 addLevelState,
 
@@ -121,7 +122,7 @@ return (
         {/* Exercise Mapping */}
         {/*Map through workoutList array, and for each one, create an exerciseBlock list item */}
         {workoutList.map((exercise, index) => (
-            <li className="exerciseBlock" key={index}>
+            <li className="exerciseBlock" key={index} onClick={() => exercise.type && exerciseShuffler(index)}>
                 <div className="exerciseBlockInfo">
                     <h3>{exercise.name}</h3>
                     <h4>{exercise.time} Seconds</h4>
