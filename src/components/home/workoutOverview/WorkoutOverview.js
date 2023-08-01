@@ -21,6 +21,8 @@ onSetDifficulty,
 
 workoutList,
 workoutShuffler,
+exerciseShuffler,
+addExercise,
 
 addLevelState,
 
@@ -100,7 +102,7 @@ workoutList.map((exercise, index) => {
 })
 
 //Convert totalWorkoutSeconds to time
-var totalWorkoutTime = new Date(totalWorkoutSeconds * 1000).toISOString().substr(15, 4)
+var totalWorkoutTime = new Date(totalWorkoutSeconds * 1000).toISOString().substr(totalWorkoutSeconds >= 600 ? 14 : 15, totalWorkoutSeconds >= 600 ? 5 : 4)
 
 
 
@@ -121,7 +123,7 @@ return (
         {/* Exercise Mapping */}
         {/*Map through workoutList array, and for each one, create an exerciseBlock list item */}
         {workoutList.map((exercise, index) => (
-            <li className="exerciseBlock" key={index}>
+            <li className="exerciseBlock" key={index} onClick={() => exercise.type && exerciseShuffler(index)}>
                 <div className="exerciseBlockInfo">
                     <h3>{exercise.name}</h3>
                     <h4>{exercise.time} Seconds</h4>
@@ -134,6 +136,9 @@ return (
         ))}
 
             </ul>
+            <div className="addExerciseButton">
+                <button onClick={addExercise}>Add</button>
+            </div>
         </div>
 
         <div className="workoutOverviewButtons">

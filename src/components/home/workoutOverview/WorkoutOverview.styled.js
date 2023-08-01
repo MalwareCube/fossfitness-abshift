@@ -109,6 +109,19 @@ export const StyledWorkoutOverview = styled.div`
         flex-basis: 30%;
     }
 
+    & .addExerciseButton {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    & .addExerciseButton button {
+      display: flex;
+      justify-content: center;
+      flex-basis: 13%;
+      padding: 5px;
+    }
+
     & .startWorkoutButtonSpan {
         display: none;
     }

@@ -463,6 +463,13 @@ function App() {
     ]
   }
 
+  Object.keys(masterExerciseList).forEach(key => {
+    masterExerciseList[key].forEach((workout, workoutIndex) => {
+      if (key !== 'rest') {
+        masterExerciseList[key][workoutIndex].type = key;
+      }
+    })
+  });
 
   ///////////////////Master Exercise List Exact Copy (without any exercises that are CC (double/alternating))
   const masterExerciseListFalseCC = Object.assign({}, masterExerciseList)
@@ -511,7 +518,51 @@ function App() {
 
   ///////////////Global Workout Exercise State (The current state for this iteration. Will pull pseudo-randoms from masterExerciseList)
   const [workoutList, setWorkoutList] = useState([])
-  
+
+  // shuffle a single exercise out of the generated workout list
+  function exerciseShuffler(index) {
+    const oldExercise = workoutList[index];
+    const newExercise = masterExerciseList[oldExercise.type][Math.floor(Math.random()*masterExerciseList[oldExercise.type].length)];
+    if (oldExercise.name !== newExercise.name) {
+      workoutList[index] = newExercise;
+      workoutList[index].time = oldExercise.time;
+      setWorkoutList([...workoutList]);
+      return;
+    }
+    exerciseShuffler(index);
+  }
+
+  // add a new random exercise to the workout list
+  function addExercise() {
+    const newList = [];
+
+    let needRest = true;
+    workoutList.slice(-3).forEach(workout => {
+      if (workout.name === 'Rest') {
+        needRest = false;
+      }
+    })
+    if (needRest) {
+      newList.push(masterExerciseList['rest'][0])
+    }
+
+
+    const types = Object.keys(masterExerciseList).filter(s => s !== 'rest');
+    const type = types[Math.floor(Math.random()*types.length)];
+
+    let newExercise;
+    while (!newExercise) {
+      newExercise = masterExerciseList[type][Math.floor(Math.random()*masterExerciseList[type].length)];
+      if (workoutList.find(w => w.name === newExercise.name)) {
+        newExercise = undefined;
+      }
+    }
+    newExercise.removeable = true;
+    newList.push(newExercise)
+
+    const tuned = workoutShuffleTimer(newList);
+    setWorkoutList([...workoutList, ...tuned]);
+  }
 
   //Workouts are built in 3 functions
   //1. Workout Shuffler - Array Builder - this uses several different workout structure variations to build the base workout: workoutShuffler()
@@ -607,8 +658,10 @@ function App() {
     }
     
     //Pass over to 2. Time Shuffler
-    workoutShuffleTimer(shuffledWorkout)
+    shuffledWorkout = workoutShuffleTimer(shuffledWorkout)
 
+    //4. Set the setWorkoutList state
+    setWorkoutList(shuffledWorkout)
   }
 
   /////////////////////////////////////////////////
@@ -633,7 +686,7 @@ function App() {
     
 
     //Pass over to 3. Difficulty Tuner
-    workoutDifficultyTuner(shuffledWorkout)
+    return workoutDifficultyTuner(shuffledWorkout)
   }
 
 
@@ -672,8 +725,7 @@ function App() {
       })
     }
 
-    //4. Set the setWorkoutList state
-    setWorkoutList(shuffledWorkout)
+    return shuffledWorkout;
   }
 
   /////////////////////////////////////////////////
@@ -767,6 +819,8 @@ function App() {
 
       workoutList={workoutList}
       workoutShuffler={workoutShuffler}
+      exerciseShuffler={exerciseShuffler}
+      addExercise={addExercise}
 
       volumeState={volumeState}
       stop={stop}

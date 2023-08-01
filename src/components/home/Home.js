@@ -23,6 +23,8 @@ const Home = ({
 
   workoutList,
   workoutShuffler,
+  exerciseShuffler,
+  addExercise,
 
   volumeState,
   stop,
@@ -75,6 +77,8 @@ return (
 
             workoutList={workoutList}
             workoutShuffler={workoutShuffler}
+            exerciseShuffler={exerciseShuffler}
+            addExercise={addExercise}
 
             addLevelState={addLevelState}
 
