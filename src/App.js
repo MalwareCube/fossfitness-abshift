@@ -532,6 +532,38 @@ function App() {
     exerciseShuffler(index);
   }
 
+  // add a new random exercise to the workout list
+  function addExercise() {
+    const newList = [];
+
+    let needRest = true;
+    workoutList.slice(-3).forEach(workout => {
+      if (workout.name === 'Rest') {
+        needRest = false;
+      }
+    })
+    if (needRest) {
+      newList.push(masterExerciseList['rest'][0])
+    }
+
+
+    const types = Object.keys(masterExerciseList).filter(s => s !== 'rest');
+    const type = types[Math.floor(Math.random()*types.length)];
+
+    let newExercise;
+    while (!newExercise) {
+      newExercise = masterExerciseList[type][Math.floor(Math.random()*masterExerciseList[type].length)];
+      if (workoutList.find(w => w.name === newExercise.name)) {
+        newExercise = undefined;
+      }
+    }
+    newExercise.removeable = true;
+    newList.push(newExercise)
+
+    const tuned = workoutShuffleTimer(newList);
+    setWorkoutList([...workoutList, ...tuned]);
+  }
+
   //Workouts are built in 3 functions
   //1. Workout Shuffler - Array Builder - this uses several different workout structure variations to build the base workout: workoutShuffler()
   //2. Time Shuffler - this takes the built workout array and assigns pseudo-random durations for each exercise: workoutShuffleTimer()
@@ -626,8 +658,10 @@ function App() {
     }
     
     //Pass over to 2. Time Shuffler
-    workoutShuffleTimer(shuffledWorkout)
+    shuffledWorkout = workoutShuffleTimer(shuffledWorkout)
 
+    //4. Set the setWorkoutList state
+    setWorkoutList(shuffledWorkout)
   }
 
   /////////////////////////////////////////////////
@@ -652,7 +686,7 @@ function App() {
     
 
     //Pass over to 3. Difficulty Tuner
-    workoutDifficultyTuner(shuffledWorkout)
+    return workoutDifficultyTuner(shuffledWorkout)
   }
 
 
@@ -691,8 +725,7 @@ function App() {
       })
     }
 
-    //4. Set the setWorkoutList state
-    setWorkoutList(shuffledWorkout)
+    return shuffledWorkout;
   }
 
   /////////////////////////////////////////////////
@@ -787,6 +820,7 @@ function App() {
       workoutList={workoutList}
       workoutShuffler={workoutShuffler}
       exerciseShuffler={exerciseShuffler}
+      addExercise={addExercise}
 
       volumeState={volumeState}
       stop={stop}

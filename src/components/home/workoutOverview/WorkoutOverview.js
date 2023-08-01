@@ -22,6 +22,7 @@ onSetDifficulty,
 workoutList,
 workoutShuffler,
 exerciseShuffler,
+addExercise,
 
 addLevelState,
 
@@ -101,7 +102,7 @@ workoutList.map((exercise, index) => {
 })
 
 //Convert totalWorkoutSeconds to time
-var totalWorkoutTime = new Date(totalWorkoutSeconds * 1000).toISOString().substr(15, 4)
+var totalWorkoutTime = new Date(totalWorkoutSeconds * 1000).toISOString().substr(totalWorkoutSeconds >= 600 ? 14 : 15, totalWorkoutSeconds >= 600 ? 5 : 4)
 
 
 
@@ -135,6 +136,9 @@ return (
         ))}
 
             </ul>
+            <div className="addExerciseButton">
+                <button onClick={addExercise}>Add</button>
+            </div>
         </div>
 
         <div className="workoutOverviewButtons">
